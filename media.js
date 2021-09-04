@@ -3,14 +3,6 @@ let eventListTagsPlaceholders = document.querySelectorAll('.navigation--card--ev
 let eventFilterCategories = new(Array);
 
 
-//причем системные теги
-let cardsAlleTags = document.querySelectorAll('.media-card .navigation');
-cardsAlleTags.forEach(alleTag => {
-    if (alleTag.textContent != 'Alle' && alleTag.textContent != 'All' && alleTag.textContent != 'English' && alleTag.textContent != 'Deutsch' && alleTag.textContent != 'Germany') {
-        let currentAlleTag = alleTag.parentElement;
-        currentAlleTag.classList.remove('media-filter__item--cards');
-    }
-});
 //составляем массив категорий и сортируем его
 eventListTagsPlaceholders.forEach(placeholder => {
     stepPlaceholderValue = placeholder.textContent;
@@ -87,3 +79,17 @@ pressFilterYears.forEach(category => {
     pressFilterWrapperYear.append(clonableFiterButton);
 });
 
+
+
+
+
+
+//действия, которые лучше выполнить в конце
+//причем системные теги
+let cardsAlleTags = document.querySelectorAll('.media-filter__item .navigation');
+cardsAlleTags.forEach(alleTag => {
+    if (alleTag.textContent != 'Alle' && alleTag.textContent != 'All' && alleTag.textContent != 'English' && alleTag.textContent != 'Deutsch' && alleTag.textContent != 'Germany') {
+        let currentAlleTag = alleTag.parentElement;
+        currentAlleTag.classList.remove('media-filter__item--cards');
+    }
+});
