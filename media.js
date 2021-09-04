@@ -123,12 +123,9 @@ buttonsShowMore.forEach(showMoreButton => {
     counterValue = parseInt(counterValue);
     cardsCountValue = parseInt(cardsCountValue);
     showMoreButton.addEventListener('click', function () {
-        console.log(cardsCountValue);
-        console.log(counterValue + 4);
         if ((cardsCountValue-4) <= counterValue) {
             showMoreButton.classList.add('element-hide');
             showMoreButton.classList.remove('element-flex');
-            console.log('Еаааа!');
         }
 
         counterValue = (counterValue + 4);
