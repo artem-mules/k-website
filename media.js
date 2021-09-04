@@ -27,6 +27,11 @@ eventFilterCategories.forEach(category => {
     clonableFiterButtonP.textContent = category;
     eventFilterWrapper.append(clonableFiterButton);
 });
+//прячем кнопки, если категорий мало
+let eventFilterButtons = document.querySelectorAll('.media-filter--event .media-filter__item');
+if (eventFilterButtons.length <= 2) {
+    eventFilterWrapper.style.display = 'none';
+}
 
 //_______________________________________________________________________________________________________________
 
