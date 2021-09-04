@@ -92,3 +92,27 @@ cardsAlleTags.forEach(alleTag => {
 
 
 //сумасшедий show more :) сейчас поедет крыша
+let buttonsShowMore = document.querySelectorAll('.buttons--show-more');
+
+function checkCardsLength() {
+    buttonsShowMore.forEach(checkShowMoreButton => {
+        let currentCardsWrapper = checkShowMoreButton.previousSibling;
+        let currentCards = currentCardsWrapper.querySelectorAll('.cl-i__grid__media-list-wrapper');
+        if (currentCards.length <= 4 && checkShowMoreButton.classList.contains('element-hide') == false) {
+            checkShowMoreButton.classList.add('element-hide');
+            checkShowMoreButton.classList.remove('element-flex');
+        }
+        if (currentCards.length >= 4 && checkShowMoreButton.classList.contains('element-flex') == false) {
+            checkShowMoreButton.classList.remove('element-hide');
+            checkShowMoreButton.classList.add('element-flex');
+        }
+    });
+}
+
+// buttonsShowMore.forEach(showMoreButton => {
+//     showMoreButton.addEventListener('click', function () {
+//         checkCardsLength();
+//     });
+// });
+
+checkCardsLength();
