@@ -132,3 +132,12 @@ buttonsShowMore.forEach(showMoreButton => {
         parentCounter.setAttribute('visible-counter', counterValue);
     });
 });
+
+
+
+//test style attribute
+let testBody = document.querySelector('body')
+testBody.addEventListener('click', function () {
+    let allElements = document.querySelectorAll('.cl-i__grid__media-list-wrapper[style="display: none;"]');
+    console.log(allElements.length);
+});
