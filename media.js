@@ -110,8 +110,12 @@ function checkCardsLength() {
 }
 
 buttonsShowMore.forEach(showMoreButton => {
+    let parentCounter = showMoreButton.parentElement;
+    let counterValue = parentCounter.getAttribute('visible-counter');
+    counterValue = parseInt(counterValue);
     showMoreButton.addEventListener('click', function () {
-        checkCardsLength();
+        counterValue = (counterValue + 4);
+        parentCounter.setAttribute('visible-counter', counterValue);
     });
 });
 
