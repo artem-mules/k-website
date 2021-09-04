@@ -109,10 +109,10 @@ function checkCardsLength() {
     });
 }
 
-// buttonsShowMore.forEach(showMoreButton => {
-//     showMoreButton.addEventListener('click', function () {
-//         checkCardsLength();
-//     });
-// });
+buttonsShowMore.forEach(showMoreButton => {
+    showMoreButton.addEventListener('click', function () {
+        checkCardsLength();
+    });
+});
 
 checkCardsLength();
