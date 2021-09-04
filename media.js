@@ -80,10 +80,6 @@ pressFilterYears.forEach(category => {
 });
 
 
-
-
-
-
 //действия, которые лучше выполнить в конце
 //причем системные теги
 let cardsAlleTags = document.querySelectorAll('.media-filter__item .navigation');
@@ -93,3 +89,6 @@ cardsAlleTags.forEach(alleTag => {
         currentAlleTag.classList.remove('media-filter__item--cards');
     }
 });
+
+
+//сумасшедий show more :) сейчас поедет крыша
