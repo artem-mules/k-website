@@ -98,6 +98,10 @@ function checkCardsLength() {
     buttonsShowMore.forEach(checkShowMoreButton => {
         let currentCardsWrapper = checkShowMoreButton.previousSibling;
         let currentCards = currentCardsWrapper.querySelectorAll('.cl-i__grid__media-list-wrapper');
+
+        let parentCounter = checkShowMoreButton.parentElement;
+        parentCounter.setAttribute('cards-counter', currentCards.length);
+
         if (currentCards.length <= 4 && checkShowMoreButton.classList.contains('element-hide') == false) {
             checkShowMoreButton.classList.add('element-hide');
             checkShowMoreButton.classList.remove('element-flex');
@@ -109,14 +113,25 @@ function checkCardsLength() {
     });
 }
 
+checkCardsLength();
+
 buttonsShowMore.forEach(showMoreButton => {
     let parentCounter = showMoreButton.parentElement;
     let counterValue = parentCounter.getAttribute('visible-counter');
+    let cardsCountValue = parentCounter.getAttribute('cards-counter');
+
     counterValue = parseInt(counterValue);
+    cardsCountValue = parseInt(cardsCountValue);
     showMoreButton.addEventListener('click', function () {
+        console.log(cardsCountValue);
+        console.log(counterValue + 4);
+        if ((cardsCountValue-4) <= counterValue) {
+            showMoreButton.classList.add('element-hide');
+            showMoreButton.classList.remove('element-flex');
+            console.log('Еаааа!');
+        }
+
         counterValue = (counterValue + 4);
         parentCounter.setAttribute('visible-counter', counterValue);
     });
 });
-
-checkCardsLength();
