@@ -134,7 +134,7 @@ buttonsShowMore.forEach(showMoreButton => {
 });
 
 
-let allMediaCards = document.querySelectorAll('.media-card');
+let allMediaCards = document.querySelectorAll('.cl-i__grid__media-list-wrapper');
 
 allMediaCards.forEach(mediaCard => {
     mediaCard.classList.add('cl-i__grid__media-list-wrapper--more-hide');
@@ -147,7 +147,15 @@ function cardsFunc () {
         let currentCounter = cardsSection.getAttribute('visible-counter');
         currentCounter = parseInt(currentCounter);
 
-        
+        let currentMediaCards = cardsSection.querySelectorAll('.cl-i__grid__media-list-wrapper');
+        let elementsWithoutStyleAttr = new(Array);
+        currentMediaCards.forEach(currentMediaCard => {
+            if (currentMediaCard.getAttribute("style", "display: none;") == false) {
+                elementsWithoutStyleAttr.push(currentMediaCard);
+            }
+        });
+
+        console.log(elementsWithoutStyleAttr.length + ' элементов без аттрибута');
     });
 }
 
@@ -158,5 +166,7 @@ let bodyElement = document.querySelector('body')
 bodyElement.addEventListener('click', function () {
     // let allElements = document.querySelectorAll('.cl-i__grid__media-list-wrapper[style="display: none;"]');
     // console.log(allElements.length + ' скрытых эелементов');
-    cardsFunc();
+    setTimeout(cardsFunc, 200);
 });
+
+cardsFunc();
