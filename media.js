@@ -166,7 +166,7 @@ let bodyElement = document.querySelector('body')
 bodyElement.addEventListener('click', function () {
     // let allElements = document.querySelectorAll('.cl-i__grid__media-list-wrapper[style="display: none;"]');
     // console.log(allElements.length + ' скрытых эелементов');
-    setTimeout(cardsFunc, 200);
+    setTimeout(cardsFunc, 1000);
 });
 
 cardsFunc();
