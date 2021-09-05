@@ -143,6 +143,14 @@ allMediaCards.forEach(mediaCard => {
 //что-то, не знаю что
 let cardsSections = document.querySelectorAll('[visible-counter]');
 function cardsFunc () {
+
+    allMediaCards.forEach(mediaCard => {
+        if (mediaCard.classList.contains('cl-i__grid__media-list-wrapper--more-hide') == false) {
+            mediaCard.classList.add('cl-i__grid__media-list-wrapper--more-hide');
+        }
+    });
+
+
     cardsSections.forEach(cardsSection => {
         let currentCounter = cardsSection.getAttribute('visible-counter');
         currentCounter = parseInt(currentCounter);
@@ -154,8 +162,11 @@ function cardsFunc () {
                 elementsWithoutStyleAttr.push(currentMediaCard);
             }
         });
-
-        console.log(elementsWithoutStyleAttr.length + ' элементов без аттрибута');
+        // console.log(elementsWithoutStyleAttr.length + ' элементов без аттрибута');
+        let slicedArray = elementsWithoutStyleAttr.slice(0, currentCounter);
+        slicedArray.forEach(slicedElement => {
+            slicedElement.classList.remove('cl-i__grid__media-list-wrapper--more-hide');
+        });
     });
 }
 
@@ -166,7 +177,7 @@ let bodyElement = document.querySelector('body')
 bodyElement.addEventListener('click', function () {
     // let allElements = document.querySelectorAll('.cl-i__grid__media-list-wrapper[style="display: none;"]');
     // console.log(allElements.length + ' скрытых эелементов');
-    setTimeout(cardsFunc, 1000);
+    setTimeout(cardsFunc, 3000);
 });
 
 cardsFunc();
