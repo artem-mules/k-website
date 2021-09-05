@@ -134,10 +134,29 @@ buttonsShowMore.forEach(showMoreButton => {
 });
 
 
+let allMediaCards = document.querySelectorAll('.media-card');
+
+allMediaCards.forEach(mediaCard => {
+    mediaCard.classList.add('cl-i__grid__media-list-wrapper--more-hide');
+});
+
+//что-то, не знаю что
+let cardsSections = document.querySelectorAll('[visible-counter]');
+function cardsFunc () {
+    cardsSections.forEach(cardsSection => {
+        let currentCounter = cardsSection.getAttribute('visible-counter');
+        currentCounter = parseInt(currentCounter);
+
+        
+    });
+}
+
+
 
 //test style attribute
-// let testBody = document.querySelector('body')
-// testBody.addEventListener('click', function () {
-//     let allElements = document.querySelectorAll('.cl-i__grid__media-list-wrapper[style="display: none;"]');
-//     console.log(allElements.length);
-// });
+let bodyElement = document.querySelector('body')
+bodyElement.addEventListener('click', function () {
+    // let allElements = document.querySelectorAll('.cl-i__grid__media-list-wrapper[style="display: none;"]');
+    // console.log(allElements.length + ' скрытых эелементов');
+    cardsFunc();
+});
