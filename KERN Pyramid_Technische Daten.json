@@ -1,0 +1,61 @@
+[
+    {
+        "name-of-section": "Achsen: Verfahrwege",
+        "string-1": "X-Achse @ 500 mm",
+        "string-2": "Y-Achse @ 500 mm",
+        "string-3": "Z-Achse @ 400 mm",
+        "string-4": "B-Achse @ -20° bis +110° (Schwenken)",
+        "string-5": "C-Achse @ 360° endloss"
+    },
+    {
+        "name-of-section": "Achsen: Dynamik",
+        "string-1": "Vmax X, Y, Z @ 30 m/min",
+        "string-2": "amax X, Y, Z @ 10 m/s2",
+        "string-3": "vmax A @ 800 1/min",
+        "string-4": "vmaxC @ 800 1/min",
+        "string-5": "Spitzenmoment A @ 77 Nm",
+        "string-6": "Dauermoment A @ 50 Nm",
+        "string-7": "Haltemoment A-Achse (hydraulisch geklemmt) @ 200 Nm",
+        "string-8": "Spitzenmoment C @ 39 Nm",
+        "string-9": "Dauermoment C @ 24 Nm"
+    },
+    {
+        "name-of-section": "Werkzeugwechsler HSK 25",
+        "string-1": "32-fach, 64-fach, 96-fach @ (*)",
+        "string-2": "Werkzeugwechselzeit @ < 3s",
+        "string-3": "Span zu Span Zeit @ < 5s",
+        "string-4": "Max. Werkzeugdurchmesser für automatischen Wechsel @ 60 mm (jeder zweite Platz frei)",
+        "string-5": "Max. Werkzeuglänge für automatischen Wechsler inkl. Werkzeughalter @ 160 mm"
+    },
+    {
+        "name-of-section": "Werkzeugwechsler HSK 40",
+        "string-1": "25-fach, 50-fach, 75-fach @ (*)",
+        "string-2": "Werkzeugwechselzeit @ < 3s",
+        "string-3": "Span zu Span Zeit @ < 5s",
+        "string-4": "Max. Werkzeugdurchmesser für automatischen Wechsel @ 60 mm (jeder zweite Platz frei)",
+        "string-5": "Max. Werkzeuglänge für automatischen Wechsler inkl. Werkzeughalter @ 160 mm"
+    },
+    {
+        "name-of-section": "Steuerung",
+        "string-1": "Heidenhain iTNC530 / TNC640 @ (*)"
+    },  
+    {
+        "name-of-section": "Arbeitsspindel HSK 25",
+        "string-1": "nmax @ 50.000 1/min",
+        "string-2": "Drehmomentmax (S1) @ 1.6 Nm",
+        "string-3": "Leistungmax @ 7.8 kW"
+    },  
+    {
+        "name-of-section": "Arbeitsspindel HSK 40",
+        "string-1": "nmax @ 42.000 1/min",
+        "string-2": "Drehmomentmax (S1) @ 5.9 Nm",
+        "string-3": "Drehmomentmax (S6) @ 8.0 Nm",
+        "string-4": "Leistungmax @ 20 kW"
+    },
+    {
+        "name-of-section": "Spannsystem auf 5. Achse",
+        "string-1": "Erowa ITS 148 @ (*)",
+        "string-2": "System 3R Magnum @ (*)",
+        "string-3": "Hirschmann @ (*)"
+    }
+]
