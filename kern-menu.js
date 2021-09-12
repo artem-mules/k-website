@@ -12,6 +12,7 @@ let navTriggerClose3 = document.querySelector('.nav3__close');
 let allNavs = document.querySelectorAll('.nav--slide');
 let allCloseTriggers = document.querySelectorAll('.close-trigger');
 let permanentHeader = document.querySelector('.section--header-2inner__permanent');
+let header = document.querySelector('.section--header');
 
 let currentUrl = window.location.href;
 let splittedUrl = currentUrl.split('/');
@@ -45,3 +46,11 @@ allNavs.forEach((navSlide, id) => {
 
 });
 
+
+header.addEventListener('mouseleave', function () {
+    allCloseTriggers.forEach(closeTrigger => {
+        closeTrigger.click();
+    });
+    navTriggerClose.click();
+    console.log('курсор покинул ХЕДЕР');
+});
