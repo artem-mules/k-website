@@ -9,6 +9,7 @@ let navTriggerClose1 = document.querySelector('.nav1__close');
 let navTriggerClose2 = document.querySelector('.nav2__close');
 let navTriggerClose3 = document.querySelector('.nav3__close');
 
+let navAuftragsfertigung = document.querySelector('.nav--auftragsfertigung');
 let allNavs = document.querySelectorAll('.nav--slide');
 let allCloseTriggers = document.querySelectorAll('.close-trigger');
 let permanentHeader = document.querySelector('.section--header-2inner__permanent');
@@ -20,11 +21,8 @@ let nameOfPage = (splittedUrl[splittedUrl.length - 1]);
 
 if (nameOfPage == 'maschinen' || nameOfPage == 'unternehmen' || nameOfPage == 'karriere') {
     permanentHeader.classList.add('display-block');
-    // header2inner.classList.add('invis-section');
 } else {
     permanentHeader.classList.add('display-none');
-    // header2.classList.add('invis-section');
-    // header2inner.classList.add('visible-section');
 }
 
 allNavs.forEach((navSlide, id) => {
@@ -47,10 +45,16 @@ allNavs.forEach((navSlide, id) => {
 });
 
 
+navAuftragsfertigung.addEventListener('mouseover', function () {
+    allCloseTriggers.forEach(closeTrigger => {
+        closeTrigger.click();
+    });
+    navTriggerClose.click();
+});
+
 header.addEventListener('mouseleave', function () {
     allCloseTriggers.forEach(closeTrigger => {
         closeTrigger.click();
     });
     navTriggerClose.click();
-    console.log('курсор покинул ХЕДЕР');
 });
