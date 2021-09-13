@@ -9,6 +9,8 @@ let navTriggerClose1 = document.querySelector('.nav1__close');
 let navTriggerClose2 = document.querySelector('.nav2__close');
 let navTriggerClose3 = document.querySelector('.nav3__close');
 
+let permanentPlaceholder = document.querySelector('.header__pc-menu--permanent');
+let allNavIndicators = document.querySelectorAll('.current-nav-indicator');
 let pageTitle = document.querySelector('.nav--page-title');
 let navAuftragsfertigung = document.querySelector('.nav--auftragsfertigung');
 let allNavs = document.querySelectorAll('.nav--slide');
@@ -21,6 +23,15 @@ let currentUrl = window.location.href;
 let splittedUrl = currentUrl.split('/');
 let nameOfPage = (splittedUrl[splittedUrl.length - 1]);
 pageTitle.textContent = nameOfPage;
+
+allNavIndicators.forEach(currentIndicators => {
+    if (currentIndicators.textContent == nameOfPage) {
+        let currentNavBar = currentIndicators.nextSibling;
+        let clonableNav = currentNavBar.cloneNode(true);
+        permanentPlaceholder.append(clonableNav);
+
+    }
+});
 
 let lastScrollTop = 0;
 
