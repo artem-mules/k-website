@@ -69,15 +69,9 @@ header.addEventListener('mouseleave', function () {
 
 
 function checkSizeOfHeader() {    
-
-    
     if (scrollY >= 111) {
         if (headerDiv.classList.contains('small-header') == false) {
             headerDiv.classList.add('small-header');
-        }
-
-        if (mainPages == true) {
-
         }
 
     } else {
@@ -88,16 +82,24 @@ function checkSizeOfHeader() {
 }
 
 window.addEventListener('scroll', function () {
+    checkSizeOfHeader();
     var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
     if (st > lastScrollTop) {
         // downscroll code
-        console.log('downscroll');
+        // console.log('downscroll');
+        if (scrollY >= 111 && mainPages == true && header.classList.contains('header-hide-y') == false) {
+            console.log('прячем хедер');
+            header.classList.add('header-hide-y');
+        }
     } else {
+        if (scrollY >= 111 && mainPages == true && header.classList.contains('header-hide-y') == true) {
+            console.log('показываем хедер');
+            header.classList.remove('header-hide-y');
+        }
         // upscroll code
-        console.log('upscroll');
+        // console.log('upscroll');
     }
     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-    checkSizeOfHeader();
 }, false);
 
 
