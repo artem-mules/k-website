@@ -65,7 +65,9 @@ header.addEventListener('mouseleave', function () {
 });
 
 
-function checkSizeOfHeader() {
+function checkSizeOfHeader() {    
+
+    
     if (scrollY >= 111) {
         if (headerDiv.classList.contains('small-header') == false) {
             headerDiv.classList.add('small-header');
@@ -73,15 +75,6 @@ function checkSizeOfHeader() {
 
         if (mainPages == true) {
 
-            window.addEventListener("mousewheel", function (event) {
-                if (event.wheelDelta >= 0) {
-                    console.log('вверх');
-                    header.classList.remove('header-hide-y');
-                } else {
-                    console.log('вниз');
-                    header.classList.add('header-hide-y');
-                }
-            })
         }
 
     } else {
