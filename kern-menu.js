@@ -46,6 +46,9 @@ if (nameOfPage == 'maschinen' || nameOfPage == 'unternehmen' || nameOfPage == 'k
     permanentHeader.classList.add('display-none');
     mainPages = false;
 }
+if (headerBorder.classList.contains('opacity-zero') == true && mainPages == true) {
+    headerBorder.classList.remove('opacity-zero');
+}
 
 allNavs.forEach((navSlide, id) => {
     navSlide.addEventListener('mouseover', function () {
@@ -119,12 +122,18 @@ window.addEventListener('scroll', function () {
         if (pageTitle.classList.contains('opacity-zero') == true) {
             pageTitle.classList.remove('opacity-zero');
         }
+        if (headerBorder.classList.contains('opacity-zero') == false && mainPages == true) {
+            headerBorder.classList.add('opacity-zero');
+        }
     } else {
         if (scrollY >= 111 && mainPages == true && header.classList.contains('header-hide-y') == true) {
             header.classList.remove('header-hide-y');
         }
         if (pageTitle.classList.contains('opacity-zero') == false) {
             pageTitle.classList.add('opacity-zero');
+        }
+        if (headerBorder.classList.contains('opacity-zero') == true && mainPages == true) {
+            headerBorder.classList.remove('opacity-zero');
         }
     }
     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
