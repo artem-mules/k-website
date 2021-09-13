@@ -37,16 +37,14 @@ allNavIndicators.forEach(currentIndicators => {
 let lastScrollTop = 0;
 
 
-let mainPages;
 
-if (nameOfPage == 'maschinen' || nameOfPage == 'unternehmen' || nameOfPage == 'karriere') {
+
+if (mainPages == undefined) {
     permanentHeader.classList.add('display-block');
-    mainPages = true;
 } else {
     permanentHeader.classList.add('display-none');
-    mainPages = false;
 }
-if (headerBorder.classList.contains('opacity-zero') == true && mainPages == true) {
+if (headerBorder.classList.contains('opacity-zero') == true && mainPages == undefined) {
     headerBorder.classList.remove('opacity-zero');
 }
 
@@ -116,23 +114,23 @@ window.addEventListener('scroll', function () {
     checkSizeOfHeader();
     var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
     if (st > lastScrollTop) {
-        if (scrollY >= 111 && mainPages == true && header.classList.contains('header-hide-y') == false) {
+        if (scrollY >= 111 && mainPages == undefined && header.classList.contains('header-hide-y') == false) {
             header.classList.add('header-hide-y');
         }
         if (pageTitle.classList.contains('opacity-zero') == true) {
             pageTitle.classList.remove('opacity-zero');
         }
-        if (headerBorder.classList.contains('opacity-zero') == false && mainPages == true) {
+        if (headerBorder.classList.contains('opacity-zero') == false && mainPages == undefined) {
             headerBorder.classList.add('opacity-zero');
         }
     } else {
-        if (scrollY >= 111 && mainPages == true && header.classList.contains('header-hide-y') == true) {
+        if (scrollY >= 111 && mainPages == undefined && header.classList.contains('header-hide-y') == true) {
             header.classList.remove('header-hide-y');
         }
         if (pageTitle.classList.contains('opacity-zero') == false) {
             pageTitle.classList.add('opacity-zero');
         }
-        if (headerBorder.classList.contains('opacity-zero') == true && mainPages == true) {
+        if (headerBorder.classList.contains('opacity-zero') == true && mainPages == undefined) {
             headerBorder.classList.remove('opacity-zero');
         }
     }
