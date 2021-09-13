@@ -14,15 +14,20 @@ let allNavs = document.querySelectorAll('.nav--slide');
 let allCloseTriggers = document.querySelectorAll('.close-trigger');
 let permanentHeader = document.querySelector('.section--header-2inner__permanent');
 let header = document.querySelector('.section--header');
+let headerDiv = document.querySelector('.header');
 
 let currentUrl = window.location.href;
 let splittedUrl = currentUrl.split('/');
 let nameOfPage = (splittedUrl[splittedUrl.length - 1]);
 
+let mainPages;
+
 if (nameOfPage == 'maschinen' || nameOfPage == 'unternehmen' || nameOfPage == 'karriere') {
     permanentHeader.classList.add('display-block');
+    mainPages = true;
 } else {
     permanentHeader.classList.add('display-none');
+    mainPages = false;
 }
 
 allNavs.forEach((navSlide, id) => {
@@ -58,3 +63,37 @@ header.addEventListener('mouseleave', function () {
     });
     navTriggerClose.click();
 });
+
+
+function checkSizeOfHeader() {
+    if (scrollY >= 111) {
+        if (headerDiv.classList.contains('small-header') == false) {
+            headerDiv.classList.add('small-header');
+        }
+
+        if (mainPages == true) {
+
+            window.addEventListener("mousewheel", function (event) {
+                if (event.wheelDelta >= 0) {
+                    console.log('вверх');
+                    header.classList.remove('header-hide-y');
+                } else {
+                    console.log('вниз');
+                    header.classList.add('header-hide-y');
+                }
+            })
+        }
+
+    } else {
+        if (headerDiv.classList.contains('small-header') == true) {
+            headerDiv.classList.remove('small-header');
+        }
+    }
+}
+
+window.addEventListener('scroll', function () {
+    checkSizeOfHeader();
+});
+
+
+checkSizeOfHeader();
