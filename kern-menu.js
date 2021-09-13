@@ -9,6 +9,7 @@ let navTriggerClose1 = document.querySelector('.nav1__close');
 let navTriggerClose2 = document.querySelector('.nav2__close');
 let navTriggerClose3 = document.querySelector('.nav3__close');
 
+let pageTitle = document.querySelector('.nav--page-title');
 let navAuftragsfertigung = document.querySelector('.nav--auftragsfertigung');
 let allNavs = document.querySelectorAll('.nav--slide');
 let allCloseTriggers = document.querySelectorAll('.close-trigger');
@@ -19,6 +20,7 @@ let headerDiv = document.querySelector('.header');
 let currentUrl = window.location.href;
 let splittedUrl = currentUrl.split('/');
 let nameOfPage = (splittedUrl[splittedUrl.length - 1]);
+pageTitle.textContent = nameOfPage;
 
 let lastScrollTop = 0;
 
@@ -73,11 +75,13 @@ function checkSizeOfHeader() {
         if (headerDiv.classList.contains('small-header') == false) {
             headerDiv.classList.add('small-header');
         }
+        pageTitle.classList.remove('opacity-zero');
 
     } else {
         if (headerDiv.classList.contains('small-header') == true) {
             headerDiv.classList.remove('small-header');
         }
+        pageTitle.classList.add('opacity-zero');
     }
 }
 
@@ -85,22 +89,17 @@ window.addEventListener('scroll', function () {
     checkSizeOfHeader();
     var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
     if (st > lastScrollTop) {
-        // downscroll code
-        // console.log('downscroll');
         if (scrollY >= 111 && mainPages == true && header.classList.contains('header-hide-y') == false) {
-            console.log('прячем хедер');
             header.classList.add('header-hide-y');
         }
     } else {
         if (scrollY >= 111 && mainPages == true && header.classList.contains('header-hide-y') == true) {
-            console.log('показываем хедер');
             header.classList.remove('header-hide-y');
         }
-        // upscroll code
-        // console.log('upscroll');
     }
     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
 }, false);
 
 
 checkSizeOfHeader();
+
