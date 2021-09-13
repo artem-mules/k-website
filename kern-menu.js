@@ -9,6 +9,7 @@ let navTriggerClose1 = document.querySelector('.nav1__close');
 let navTriggerClose2 = document.querySelector('.nav2__close');
 let navTriggerClose3 = document.querySelector('.nav3__close');
 
+let headerBorder = document.querySelector('.header-white-border');
 let permanentPlaceholder = document.querySelector('.header__pc-menu--permanent');
 let allNavIndicators = document.querySelectorAll('.current-nav-indicator');
 let pageTitle = document.querySelector('.nav--page-title');
@@ -52,6 +53,10 @@ allNavs.forEach((navSlide, id) => {
         let currentCloseTriggerClassName = ('.nav' + (id + 1) + '__close')
         let currentOpenTrigger = document.querySelector(currentOpenTriggerClassName);
 
+        if (headerBorder.classList.contains('opacity-zero') == true && mainPages == false) {
+            headerBorder.classList.remove('opacity-zero');
+        }
+
         allCloseTriggers.forEach(closeTrigger => {
             if (document.querySelector(currentCloseTriggerClassName) != closeTrigger) {
                 closeTrigger.click();
@@ -71,6 +76,10 @@ navAuftragsfertigung.addEventListener('mouseover', function () {
         closeTrigger.click();
     });
     navTriggerClose.click();
+
+    if (headerBorder.classList.contains('opacity-zero') == false && mainPages == false) {
+        headerBorder.classList.add('opacity-zero');
+    }
 });
 
 header.addEventListener('mouseleave', function () {
@@ -78,6 +87,10 @@ header.addEventListener('mouseleave', function () {
         closeTrigger.click();
     });
     navTriggerClose.click();
+
+    if (headerBorder.classList.contains('opacity-zero') == false && mainPages == false) {
+        headerBorder.classList.add('opacity-zero');
+    }
 });
 
 
