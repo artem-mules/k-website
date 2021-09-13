@@ -38,7 +38,7 @@ let lastScrollTop = 0;
 
 let mainPages;
 
-if (nameOfPage == 'maschinen' || nameOfPage == 'ueber-kern' || nameOfPage == 'karriere') {
+if (nameOfPage == 'maschinen' || nameOfPage == 'unternehmen' || nameOfPage == 'karriere') {
     permanentHeader.classList.add('display-block');
     mainPages = true;
 } else {
@@ -103,9 +103,15 @@ window.addEventListener('scroll', function () {
         if (scrollY >= 111 && mainPages == true && header.classList.contains('header-hide-y') == false) {
             header.classList.add('header-hide-y');
         }
+        if (pageTitle.classList.contains('opacity-zero') == true) {
+            pageTitle.classList.remove('opacity-zero');
+        }
     } else {
         if (scrollY >= 111 && mainPages == true && header.classList.contains('header-hide-y') == true) {
             header.classList.remove('header-hide-y');
+        }
+        if (pageTitle.classList.contains('opacity-zero') == false) {
+            pageTitle.classList.add('opacity-zero');
         }
     }
     lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
