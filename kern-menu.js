@@ -38,7 +38,7 @@ let lastScrollTop = 0;
 
 let mainPages;
 
-if (nameOfPage == 'maschinen' || nameOfPage == 'unternehmen' || nameOfPage == 'karriere') {
+if (nameOfPage == 'maschinen' || nameOfPage == 'ueber-kern' || nameOfPage == 'karriere') {
     permanentHeader.classList.add('display-block');
     mainPages = true;
 } else {
