@@ -20,6 +20,9 @@ let currentUrl = window.location.href;
 let splittedUrl = currentUrl.split('/');
 let nameOfPage = (splittedUrl[splittedUrl.length - 1]);
 
+let lastScrollTop = 0;
+
+
 let mainPages;
 
 if (nameOfPage == 'maschinen' || nameOfPage == 'unternehmen' || nameOfPage == 'karriere') {
@@ -85,8 +88,17 @@ function checkSizeOfHeader() {
 }
 
 window.addEventListener('scroll', function () {
+    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+    if (st > lastScrollTop) {
+        // downscroll code
+        console.log('downscroll');
+    } else {
+        // upscroll code
+        console.log('upscroll');
+    }
+    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
     checkSizeOfHeader();
-});
+}, false);
 
 
 checkSizeOfHeader();
