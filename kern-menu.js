@@ -33,26 +33,15 @@ allSubMenus.forEach(subMenu => {
             let currentLinkIndicator = subMenu.previousSibling;
             currentLinkIndicator = currentLinkIndicator.textContent;
             pageTitle.textContent = currentLinkIndicator;
-            console.log('условие с w--current');
+
+            let clonableNav = subMenu.cloneNode(true);
+            permanentPlaceholder.append(clonableNav);
         }
     });
 });
 
 
-
-
-allNavIndicators.forEach(currentIndicators => {
-    if (currentIndicators.textContent == nameOfPage) {
-        let currentNavBar = currentIndicators.nextSibling;
-        let clonableNav = currentNavBar.cloneNode(true);
-        permanentPlaceholder.append(clonableNav);
-
-    }
-});
-
 let lastScrollTop = 0;
-
-
 
 
 if (mainPages == undefined) {
