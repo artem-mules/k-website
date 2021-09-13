@@ -28,17 +28,18 @@ let nameOfPage = (splittedUrl[splittedUrl.length - 1]);
 
 allSubMenus.forEach(subMenu => {
     let allSubMenuLinks = subMenu.querySelectorAll('.nav');
-    let currentLinkIndicator = subMenu.previousSibling;
-    currentLinkIndicator = currentLinkIndicator.textContent;
     allSubMenuLinks.forEach(link => {
-        let currentLinkName = link.getAttribute('href');
-        currentLinkName = currentLinkName.split('/');
-        currentLinkName = (currentLinkName[currentLinkName.length - 1]);
-        if (currentLinkIndicator == nameOfPage) {
+        if (link.classList.contains('w--current')) {
+            let currentLinkIndicator = subMenu.previousSibling;
+            currentLinkIndicator = currentLinkIndicator.textContent;
             pageTitle.textContent = currentLinkIndicator;
+            console.log('условие с w--current');
         }
     });
 });
+
+
+
 
 allNavIndicators.forEach(currentIndicators => {
     if (currentIndicators.textContent == nameOfPage) {
