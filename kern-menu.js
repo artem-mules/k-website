@@ -9,6 +9,7 @@ let navTriggerClose1 = document.querySelector('.nav1__close');
 let navTriggerClose2 = document.querySelector('.nav2__close');
 let navTriggerClose3 = document.querySelector('.nav3__close');
 
+let allSubMenus = document.querySelectorAll('.header__pc-menu--sub');
 let headerBorder = document.querySelector('.header-white-border');
 let permanentPlaceholder = document.querySelector('.header__pc-menu--permanent');
 let allNavIndicators = document.querySelectorAll('.current-nav-indicator');
@@ -23,7 +24,21 @@ let headerDiv = document.querySelector('.header');
 let currentUrl = window.location.href;
 let splittedUrl = currentUrl.split('/');
 let nameOfPage = (splittedUrl[splittedUrl.length - 1]);
-pageTitle.textContent = nameOfPage;
+
+
+allSubMenus.forEach(subMenu => {
+    let allSubMenuLinks = subMenu.querySelectorAll('.nav');
+    let currentLinkIndicator = subMenu.previousSibling;
+    currentLinkIndicator = currentLinkIndicator.textContent;
+    allSubMenuLinks.forEach(link => {
+        let currentLinkName = link.getAttribute('href');
+        currentLinkName = currentLinkName.split('/');
+        currentLinkName = (currentLinkName[currentLinkName.length - 1]);
+        if (currentLinkIndicator == nameOfPage) {
+            pageTitle.textContent = currentLinkIndicator;
+        }
+    });
+});
 
 allNavIndicators.forEach(currentIndicators => {
     if (currentIndicators.textContent == nameOfPage) {
@@ -112,7 +127,7 @@ function checkSizeOfHeader() {
 
 window.addEventListener('scroll', function () {
     checkSizeOfHeader();
-    var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+    var st = window.pageYOffset || document.documentElement.scrollTop; 
     if (st > lastScrollTop) {
         if (scrollY >= 111 && mainPages == undefined && header.classList.contains('header-hide-y') == false) {
             header.classList.add('header-hide-y');
@@ -134,9 +149,13 @@ window.addEventListener('scroll', function () {
             headerBorder.classList.remove('opacity-zero');
         }
     }
-    lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    lastScrollTop = st <= 0 ? 0 : st; 
 }, false);
 
 
 checkSizeOfHeader();
 
+//надо смотреть в адрес
+//если адрес совпадает с ссылкой какого-нибудь меню 
+//определять родитеьский элемент, а следом предыдущий текстовый
+//если есть свопадение 
