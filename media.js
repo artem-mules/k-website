@@ -91,3 +91,48 @@ cardsAlleTags.forEach(alleTag => {
 });
 
 
+//перенес финсвит сюда
+(function() {
+var fsComponent = new FsLibrary('.cl__grid__media-list-wrapper--event')
+
+var myFilters = [
+  {
+    filterWrapper: '.media-filter--event',
+    filterType: 'exclusive'
+  }
+]
+
+fsComponent.filter({
+  filterArray: myFilters,
+  activeClass: 'w--current',
+  animation: {
+    enable: true
+  }	
+})
+})();
+
+(function() {
+var fsComponent = new FsLibrary('.cl__grid__media-list-wrapper--press')
+fsComponent.combine()
+
+var myFilters = [
+  {
+    filterWrapper: '.media-filter--pr-cat',
+    filterType: 'multi'
+  },
+  {
+    filterWrapper: '.media-filter--pr-year',
+    filterType: 'multi'
+  }
+]
+
+fsComponent.filter({
+  filterArray: myFilters,
+  activeClass: 'w--current',
+  animation: {
+    enable: true
+  }	
+})
+})();
+
+
