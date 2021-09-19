@@ -67,14 +67,22 @@ cardsAlleTags.forEach(alleTag => {
     })
 })();
 
-
+function hideLangItems() {
+    let currentPageLang = Weglot.getCurrentLang();
+    if (currentPageLang == 'en') {
+        console.log('это инглиш ман ин нюёрк');
+    } else {
+        console.log('ду хаст мих гефраген');
+    }
+}
 
 
 Weglot.on("languageChanged", function () {
-
+    hideLangItems();
 })
 
 
 Weglot.on("initialized", function () {
-
+    hideLangItems();
 })
+
