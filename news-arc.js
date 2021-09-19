@@ -54,7 +54,8 @@ cardsAlleTags.forEach(alleTag => {
 
     let myFilters = [{
         filterWrapper: '.media-filter--pr-year',
-        filterType: 'multi'
+        filterType: 'multi',
+        filterByClass: ".filter-by-year-id"
     }]
 
     fsComponent2.filter({
