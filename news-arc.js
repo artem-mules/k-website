@@ -101,3 +101,29 @@ Weglot.on("initialized", function () {
     hideLangItems();
 })
 
+//form script
+function contactPageStart() {
+
+    //____________________________________________________________________________________
+    //countrues and sates_________________________________________________________________
+    let countryListInput = document.querySelector('#land__newsletter-ab');
+    let stateTriggerShow = document.querySelector('.o__input-countries-wrapper__1');
+    let stateTriggerClose = document.querySelector('.c__input-countries-wrapper__1');
+
+    countryListInput.addEventListener('change', function () {
+        if (this.value == 'Deutschland') {
+            stateTriggerShow.click();
+        } else {
+            stateTriggerClose.click();
+        }
+    });
+
+
+
+
+}
+
+contactPageStart();
+Weglot.on("languageChanged", function () {
+    contactPageStart();
+})
