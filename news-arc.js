@@ -54,7 +54,7 @@ cardsAlleTags.forEach(alleTag => {
 
     let myFilters = [{
         filterWrapper: '.media-filter--pr-year',
-        filterType: 'multi',
+        filterType: 'exclusive',
         filterByClass: ".filter-by-year-id"
     }]
 
@@ -68,11 +68,26 @@ cardsAlleTags.forEach(alleTag => {
 })();
 
 function hideLangItems() {
-    let currentPageLang = Weglot.getCurrentLang();
-    if (currentPageLang == 'en') {
-        console.log('это инглиш ман ин нюёрк');
+    let weGlotLang = Weglot.getCurrentLang();
+    let allCards = document.querySelectorAll('.cl-i__grid__media-list-wrapper');
+    if (weGlotLang == 'en') {
+        allCards.forEach(card => {
+            let cardLangId = card.querySelector('.filter-by-lang-id').textContent;
+            if (cardLangId != 'English') {
+                card.classList.add('hide-element');
+            } else {
+                card.classList.remove('hide-element');
+            }
+        });
     } else {
-        console.log('ду хаст мих гефраген');
+        allCards.forEach(card => {
+            let cardLangId = card.querySelector('.filter-by-lang-id').textContent;
+            if (cardLangId != 'Deutsch') {
+                card.classList.add('hide-element');
+            } else {
+                card.classList.remove('hide-element');
+            }
+        });
     }
 }
 
