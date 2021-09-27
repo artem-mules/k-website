@@ -1,28 +1,5 @@
 let pressFilterWrapperCategory = document.querySelector('#press__media-filter-cat');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+let initCounter = 0;
 
 
 let eventFilterWrapper = document.querySelector('.media-filter--event');
