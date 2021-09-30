@@ -129,18 +129,45 @@ function buttonsStarter() {
     createActualCatButtons();
 }
 
+
 Weglot.on("languageChanged", function () {
     // setTimeout(buttonsStarter, 1000);
     buttonsStarter();
+    console.log('languageChanged');
 })
 Weglot.on("initialized", function () {
     // setTimeout(buttonsStarter, 1000);
     buttonsStarter();
+    console.log('initialized');
 })
-
-finSweetStart();
 //идея в том,чтобы создавать новые компоненты и элементы до бесконечности.
 //идея перезагружать страницу (начать стои с неё, вдруг не зашквар)
 //идея выяснить как удалить функцию из памяти
 //попробовать удалить свою какую-то простую функцию, посмотреть что получится, может тогда удастся засунуть весь код библиотеки
 //ответить на вопрос, почему после переключения языка фильтры прекращают переводиться
+
+// setTimeout(finSweetStart, 100);
+
+// Weglot.on("switchersReady", function (initialLanguage) {
+//     console.log("the switchers are ready, I can tweak them")
+//     let weGlotSwitcher = document.querySelectorAll('.wg-li');
+
+//     weGlotSwitcher.forEach(switcher => {
+//         switcher.addEventListener('mousedown', function () {
+//             console.log('weglot is clicked!!!!!');
+//             console.log(switcher.classList.contains('wgcurrent'));
+//             if (switcher.classList.contains('wgcurrent') == false) {
+//                 console.log('перезагружаем страницу');
+                
+//                 console.log('перезагрузили');
+//                 function restartPageC() {
+//                     document.location.reload();
+//                 }
+//                 setTimeout(restartPageC, 500);
+//             }
+//         });
+//     });
+// })
+
+
+// //если перезагрузка ходит по кругу, то пусть эта функция начинает работать только спустя 3 секунды после загрзки страницы
