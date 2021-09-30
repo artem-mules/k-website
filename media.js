@@ -116,7 +116,8 @@ function finSweetStart() {
     })();
 
 }
-function removeFilterButtons () {
+
+function removeFilterButtons() {
     let allFilterButtons = document.querySelectorAll('.filter-button-item');
     allFilterButtons.forEach(fiterButton => {
         fiterButton.remove();
@@ -158,7 +159,7 @@ Weglot.on("initialized", function () {
 //             console.log(switcher.classList.contains('wgcurrent'));
 //             if (switcher.classList.contains('wgcurrent') == false) {
 //                 console.log('перезагружаем страницу');
-                
+
 //                 console.log('перезагрузили');
 //                 function restartPageC() {
 //                     document.location.reload();
