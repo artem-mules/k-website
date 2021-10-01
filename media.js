@@ -1,3 +1,5 @@
+let userChangeLangByClick;
+
 //Add actual buttons
 function createActualCatButtons() {
     let pressFilterCategoryWrapper = document.querySelector('#press__media-filter-cat');
@@ -66,28 +68,6 @@ cardsAlleTags.forEach(alleTag => {
 });
 
 
-
-let fsComponent1;
-let myFilters1;
-
-let fsComponent2;
-let myFilters2;
-
-function finSweetStop() {
-
-    fsComponent2.filter({
-        filterArray: undefined,
-        activeClass: undefined,
-        animation: {
-            enable: true
-        }
-    })
-
-    fsComponent2 = undefined
-
-    myFilters2 = undefined
-}
-
 function finSweetStart() {
 
     (function () {
@@ -130,15 +110,29 @@ function buttonsStarter() {
     createActualCatButtons();
 }
 
+Weglot.on("switchersReady", function () {
+    let weGlotSwitcherEl = document.querySelector('li.wg-li');
+    weGlotSwitcherEl.addEventListener('mousedown', function () {
+        console.log('switcher clicked');
+        userChangeLangByClick = true;
+        console.log('теперь userChangeLangByClick = true');
+    });
+})
 
 Weglot.on("languageChanged", function () {
-    // setTimeout(buttonsStarter, 1000);
     buttonsStarter();
     console.log('languageChanged');
+
+    if (userChangeLangByClick == true) {
+        console.log('будем перезагружать страницу');
+        document.location.reload();
+    }
+
+    userChangeLangByClick = false;
 })
 Weglot.on("initialized", function () {
-    // setTimeout(buttonsStarter, 1000);
     buttonsStarter();
+    setTimeout(finSweetStart, 1000);
     console.log('initialized');
 })
 //идея в том,чтобы создавать новые компоненты и элементы до бесконечности.
@@ -146,29 +140,4 @@ Weglot.on("initialized", function () {
 //идея выяснить как удалить функцию из памяти
 //попробовать удалить свою какую-то простую функцию, посмотреть что получится, может тогда удастся засунуть весь код библиотеки
 //ответить на вопрос, почему после переключения языка фильтры прекращают переводиться
-
-// setTimeout(finSweetStart, 100);
-
-// Weglot.on("switchersReady", function (initialLanguage) {
-//     console.log("the switchers are ready, I can tweak them")
-//     let weGlotSwitcher = document.querySelectorAll('.wg-li');
-
-//     weGlotSwitcher.forEach(switcher => {
-//         switcher.addEventListener('mousedown', function () {
-//             console.log('weglot is clicked!!!!!');
-//             console.log(switcher.classList.contains('wgcurrent'));
-//             if (switcher.classList.contains('wgcurrent') == false) {
-//                 console.log('перезагружаем страницу');
-
-//                 console.log('перезагрузили');
-//                 function restartPageC() {
-//                     document.location.reload();
-//                 }
-//                 setTimeout(restartPageC, 500);
-//             }
-//         });
-//     });
-// })
-
-
 // //если перезагрузка ходит по кругу, то пусть эта функция начинает работать только спустя 3 секунды после загрзки страницы
