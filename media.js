@@ -113,18 +113,14 @@ function buttonsStarter() {
 Weglot.on("switchersReady", function () {
     let weGlotSwitcherEl = document.querySelector('li.wg-li');
     weGlotSwitcherEl.addEventListener('mousedown', function () {
-        console.log('switcher clicked');
         userChangeLangByClick = true;
-        console.log('теперь userChangeLangByClick = true');
     });
 })
 
 Weglot.on("languageChanged", function () {
     buttonsStarter();
-    console.log('languageChanged');
 
     if (userChangeLangByClick == true) {
-        console.log('будем перезагружать страницу');
         document.location.reload();
     }
 
@@ -133,7 +129,6 @@ Weglot.on("languageChanged", function () {
 Weglot.on("initialized", function () {
     buttonsStarter();
     setTimeout(finSweetStart, 1000);
-    console.log('initialized');
 })
 //идея в том,чтобы создавать новые компоненты и элементы до бесконечности.
 //идея перезагружать страницу (начать стои с неё, вдруг не зашквар)
