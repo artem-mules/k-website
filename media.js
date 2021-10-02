@@ -4,7 +4,7 @@ let userChangeLangByClick;
 function createActualCatButtons() {
     let pressFilterCategoryWrapper = document.querySelector('#press__media-filter-cat');
     let pressFilterCategories = new (Array);
-    let pressListTagsPlaceholders = document.querySelectorAll('.navigation--card--press');
+    let pressListTagsPlaceholders = document.querySelectorAll('.tags-src__category');
 
     //make an array of categories and sort it
     pressListTagsPlaceholders.forEach(placeholder => {
@@ -29,7 +29,7 @@ function createActualCatButtons() {
 
 //Add actual buttons
 function createActualYearButtons() {
-    let yearPlaceholders = document.querySelectorAll('.body-3__media-card--presse');
+    let yearPlaceholders = document.querySelectorAll('.tags-src__year');
     let pressFilterWrapperYear = document.querySelector('#press__media-filter-year');
     let pressFilterYears = new (Array);
 
@@ -146,3 +146,4 @@ Weglot.on("initialized", function () {
 //прежде всего для спокойствия стоит посмотреть ролики finsweet по тому как добавлять пагинацию
 //после этого, с чистой душой смогу пойти делать меню и проверять все остальные страницы
 //остальные задачи по фильтрам не выглядят сложными
+
