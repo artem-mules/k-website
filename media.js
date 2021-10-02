@@ -13,21 +13,20 @@ function createActualCatButtons() {
             pressFilterCategories.push(stepPlaceholderValue);
         }
     });
+    //call
     pressFilterCategories.sort();
-
-
 
     pressFilterCategories.forEach(category => {
         let clonableFiterButton = document.querySelector('.clonable-elements .media-filter__item').cloneNode(true);
         clonableFiterButton.setAttribute('filter-by', category);
         clonableFiterButton.classList.add('filter-button-item');
+        clonableFiterButton.classList.remove('media-filter__item--cards');
         let clonableFiterButtonP = clonableFiterButton.querySelector('.navigation');
         clonableFiterButtonP.textContent = category;
         pressFilterCategoryWrapper.append(clonableFiterButton);
     });
 }
 
-//_______________________________________________________________________________________________________________
 //Add actual buttons
 function createActualYearButtons() {
     let yearPlaceholders = document.querySelectorAll('.body-3__media-card--presse');
@@ -40,17 +39,19 @@ function createActualYearButtons() {
         let stepPlaceholderSplit = stepPlaceholderValue.split(" ");
         let currentYear = stepPlaceholderSplit[stepPlaceholderSplit.length - 1];
 
-
         if (pressFilterYears.includes(currentYear) == false) {
             pressFilterYears.push(currentYear);
         }
     });
+
+    //call
     pressFilterYears.sort();
 
     pressFilterYears.forEach(category => {
         let clonableFiterButton = document.querySelector('.clonable-elements .media-filter__item').cloneNode(true);
         clonableFiterButton.setAttribute('filter-by', category);
         clonableFiterButton.classList.add('filter-button-item');
+        clonableFiterButton.classList.remove('media-filter__item--cards');
         let clonableFiterButtonP = clonableFiterButton.querySelector('.navigation');
         clonableFiterButtonP.textContent = category;
         pressFilterWrapperYear.append(clonableFiterButton);
@@ -58,16 +59,18 @@ function createActualYearButtons() {
 }
 
 //actions that are better to perform at the end
-//and system tags
-let cardsAlleTags = document.querySelectorAll('.media-filter__item .navigation');
-cardsAlleTags.forEach(alleTag => {
-    if (alleTag.textContent != 'Alle' && alleTag.textContent != 'All' && alleTag.textContent != 'English' && alleTag.textContent != 'Deutsch' && alleTag.textContent != 'Germany') {
-        let currentAlleTag = alleTag.parentElement;
-        currentAlleTag.classList.remove('media-filter__item--cards');
-    }
-});
+//hide system tags in cads
+function hideSystemTags() {
+    let cardsAlleTags = document.querySelectorAll('.press-wrapper .media-filter__item .navigation');
+    cardsAlleTags.forEach(alleTag => {
+        if (alleTag.textContent != 'Alle' && alleTag.textContent != 'All' && alleTag.textContent != 'English') {
+            let currentAlleTag = alleTag.parentElement;
+            currentAlleTag.classList.remove('media-filter__item--cards');
+        }
+    });
+}
 
-
+//finsweet staffs
 function finSweetStart() {
 
     (function () {
@@ -97,6 +100,7 @@ function finSweetStart() {
 
 }
 
+//the delete function is needed, when restarting the language, so that it does not create a dublicata of buttons
 function removeFilterButtons() {
     let allFilterButtons = document.querySelectorAll('.filter-button-item');
     allFilterButtons.forEach(fiterButton => {
@@ -104,12 +108,15 @@ function removeFilterButtons() {
     });
 }
 
+//a general function that calls all functionality except finsweet
 function buttonsStarter() {
     removeFilterButtons();
     createActualYearButtons();
     createActualCatButtons();
+    hideSystemTags();
 }
 
+//wait for the language switch to click and write it into a variable
 Weglot.on("switchersReady", function () {
     let weGlotSwitcherEl = document.querySelector('li.wg-li');
     weGlotSwitcherEl.addEventListener('mousedown', function () {
@@ -117,22 +124,17 @@ Weglot.on("switchersReady", function () {
     });
 })
 
+//After changing the language - check if the change was triggered by a user or automatically, if a user - reload the page
 Weglot.on("languageChanged", function () {
     buttonsStarter();
-
     if (userChangeLangByClick == true) {
         document.location.reload();
     }
-
     userChangeLangByClick = false;
 })
+
+//after starting weGlot - we ask to run finsweet after 1 second, we only do this here because initialization always happens and the language change does not always
 Weglot.on("initialized", function () {
     buttonsStarter();
     setTimeout(finSweetStart, 1000);
 })
-//идея в том,чтобы создавать новые компоненты и элементы до бесконечности.
-//идея перезагружать страницу (начать стои с неё, вдруг не зашквар)
-//идея выяснить как удалить функцию из памяти
-//попробовать удалить свою какую-то простую функцию, посмотреть что получится, может тогда удастся засунуть весь код библиотеки
-//ответить на вопрос, почему после переключения языка фильтры прекращают переводиться
-// //если перезагрузка ходит по кругу, то пусть эта функция начинает работать только спустя 3 секунды после загрзки страницы
