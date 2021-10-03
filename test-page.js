@@ -1,8 +1,3 @@
-(function () {
-    fsComponent2 = new FsLibrary('.cl__grid__media-list-wrapper--press')
-})();
-
-
 let userChangeLangByClick;
 
 //Add actual buttons
@@ -76,9 +71,12 @@ function hideSystemTags() {
 }
 
 //finsweet staffs
-function finSweetStartFilter() {
+function finSweetStart() {
 
     (function () {
+        fsComponent2 = new FsLibrary('.cl__grid__media-list-wrapper--press')
+        fsComponent2.combine()
+
         myFilters2 = [{
             filterWrapper: '.media-filter--pr-cat',
             filterType: 'multi'
@@ -97,13 +95,8 @@ function finSweetStartFilter() {
             }
         })
 
-    })();
 
-}
 
-function finSweetStartPaginator() {
-
-    (function () {
         /* LOAD MORE COMPONENT */
 
         // run loadmore on our instance
@@ -126,8 +119,10 @@ function finSweetStartPaginator() {
             }
         })
 
+        console.log('hi!hi!');
+
     })();
-    
+
 }
 
 //the delete function is needed, when restarting the language, so that it does not create a dublicata of buttons
@@ -166,10 +161,8 @@ Weglot.on("languageChanged", function () {
 //after starting weGlot - we ask to run finsweet after 1 second, we only do this here because initialization always happens and the language change does not always
 Weglot.on("initialized", function () {
     buttonsStarter();
-    // setTimeout(finSweetStart, 1000);
+    setTimeout(finSweetStart, 1000);
 })
-
-finSweetStartPaginator();
 
 
 
