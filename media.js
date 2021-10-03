@@ -96,6 +96,31 @@ function finSweetStart() {
         })
 
 
+
+        /* LOAD MORE COMPONENT */
+
+        // run loadmore on our instance
+        fsComponent2.loadmore({
+            button: ".load-more-button",
+            resetIx: true,
+            loadAll: true,
+            paginate: {
+                enable: true,
+                itemsPerPage: 4,
+                insertPagination: '.pagination-container',
+                bgColor: '#FFFFFF',
+                bgColorActive: '#240c2e',
+                textColor: '#240c2e',
+                textColorActive: '#FFFFFF',
+                borderColor: '#3D315B'
+            },
+            animation: {
+                enable: false
+            }
+        })
+
+        console.log('hi!hi!');
+
     })();
 
 }
@@ -146,4 +171,5 @@ Weglot.on("initialized", function () {
 //прежде всего для спокойствия стоит посмотреть ролики finsweet по тому как добавлять пагинацию
 //после этого, с чистой душой смогу пойти делать меню и проверять все остальные страницы
 //остальные задачи по фильтрам не выглядят сложными
+//если не будет работать пагинатор — попробовать написать свой? :)))) главное хорошо всё продумать ))))
 
