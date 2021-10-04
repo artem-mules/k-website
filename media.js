@@ -171,7 +171,6 @@ Weglot.on("initialized", function () {
 finSweetStartPaginator();
 
 
-
 //подключение пагинации ломаю все фитры, потому что для их формирования надо видеть полный список карточек. 
 //лучший вариант сейчас, чтобы выйти из ситуации — создать ещё 1 дополнительный лист, для формирования кнопок фильтра, чтобы пагинация не ломала ничего
 //прежде всего для спокойствия стоит посмотреть ролики finsweet по тому как добавлять пагинацию
@@ -186,7 +185,11 @@ let pagStatus = 0;
 function testFun() {
     if (pagStatus < 1) {
         console.log('lets start ***finSweetStartFilter');
-        setTimeout(finSweetStartFilter, 5000);
+
+        Weglot.initialize({
+            api_key: 'wg_a06f3a7b6acb04572ef530639d3aa00a6'
+        });
+        setTimeout(finSweetStartFilter, 1000);
     }
     pagStatus = pagStatus + 1;
 }
