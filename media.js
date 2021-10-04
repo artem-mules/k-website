@@ -127,7 +127,7 @@ function finSweetStartPaginator() {
         })
 
     })();
-    
+
 }
 
 //the delete function is needed, when restarting the language, so that it does not create a dublicata of buttons
@@ -166,7 +166,6 @@ Weglot.on("languageChanged", function () {
 //after starting weGlot - we ask to run finsweet after 1 second, we only do this here because initialization always happens and the language change does not always
 Weglot.on("initialized", function () {
     buttonsStarter();
-    // setTimeout(finSweetStart, 1000);
 })
 
 finSweetStartPaginator();
@@ -179,4 +178,36 @@ finSweetStartPaginator();
 //после этого, с чистой душой смогу пойти делать меню и проверять все остальные страницы
 //остальные задачи по фильтрам не выглядят сложными
 //если не будет работать пагинатор — попробовать написать свой? :)))) главное хорошо всё продумать
+//причина, по которой сейчас не работают теги в некоторых карточках — задержка загрузки всех страниц, поэтому нужно запускать очистку тегов с задержкрй
+//мне надо слушать изменения пагинатора только в начале загрузки страницы
+
+//function that will be executed after the paginator is loaded
+let pagStatus = 0;
+function testFun() {
+    if (pagStatus < 1) {
+        console.log('lets start ***finSweetStartFilter');
+        setTimeout(finSweetStartFilter, 5000);
+    }
+    pagStatus = pagStatus + 1;
+}
+//create a variable for the timer that can be overwritten
+let pagTimer;
+//at the beginning of the function pagOs -> clear the timer, if there was one, and start it again
+function pagObs() {
+    clearTimeout(pagTimer);
+    pagTimer = setTimeout(testFun, 200);
+}
+//start tracking the container with the paginator, it is important for us to understand when it changes
+const targetNode = document.querySelector(".pagination-container");
+const observerOptions = {
+    childList: true,
+    attributes: true,
+    subtree: true
+}
+//Here we specify the function that will be run whenever the tree changes
+const observer = new MutationObserver(pagObs);
+observer.observe(targetNode, observerOptions);
+//______________________________________________________________________________
+
+
 
