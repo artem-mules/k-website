@@ -137,6 +137,18 @@ function finSweetStartFilter() {
 
     })();
 
+
+    let filterAlleTagsClick = document.querySelectorAll('.media-filter--pr-cat .navigation');
+    filterAlleTagsClick[0].click();
+    filterAlleTagsClick[0].click();
+
+    function apperMedia() {
+        let mediaWrapperEl = document.querySelector('#media-list-wrapper--op');
+        mediaWrapperEl.classList.remove('media-list-wrapper--op--0');
+    }
+
+    setTimeout(apperMedia, 500);
+
 }
 
 function finSweetStartPaginator() {
