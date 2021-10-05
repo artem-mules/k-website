@@ -4,6 +4,27 @@
 
 let userChangeLangByClick;
 
+function tagsForLanguages() {
+    let weGlotCurrentLang = Weglot.getCurrentLang();
+    //delete tags from cards
+    let filterAlleTags = document.querySelectorAll('.media-filter--pr-cat .navigation');
+    if (weGlotCurrentLang == 'de') {
+        filterAlleTags.forEach(alleTag => {
+            if (alleTag.textContent != 'English' && alleTag.textContent != 'Andere Sprachen' && alleTag.textContent != 'Deutsch') {
+                let currentAlleTag = alleTag.parentElement;
+                currentAlleTag.classList.remove('media-filter__item--cards');
+            }
+        });
+    } else {
+        filterAlleTags.forEach(alleTag => {
+            if (alleTag.textContent != 'English' && alleTag.textContent != 'German' && alleTag.textContent != 'Other languages' && alleTag.textContent != 'Regional press') {
+                let currentAlleTag = alleTag.parentElement;
+                currentAlleTag.classList.remove('media-filter__item--cards');
+            }
+        });
+    }
+}
+
 //Add actual buttons
 function createActualCatButtons() {
     let pressFilterCategoryWrapper = document.querySelector('#press__media-filter-cat');
@@ -24,7 +45,6 @@ function createActualCatButtons() {
         let clonableFiterButton = document.querySelector('.clonable-elements .media-filter__item').cloneNode(true);
         clonableFiterButton.setAttribute('filter-by', category);
         clonableFiterButton.classList.add('filter-button-item');
-        clonableFiterButton.classList.remove('media-filter__item--cards');
         let clonableFiterButtonP = clonableFiterButton.querySelector('.navigation');
         clonableFiterButtonP.textContent = category;
         pressFilterCategoryWrapper.append(clonableFiterButton);
@@ -143,6 +163,7 @@ function buttonsStarter() {
     createActualYearButtons();
     createActualCatButtons();
     hideSystemTags();
+    tagsForLanguages();
 }
 
 //After changing the language - check if the change was triggered by a user or automatically, if a user - reload the page
