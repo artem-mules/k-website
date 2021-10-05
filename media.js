@@ -2,7 +2,6 @@
     fsComponent2 = new FsLibrary('.cl__grid__media-list-wrapper--press')
 })();
 
-
 let userChangeLangByClick;
 
 //Add actual buttons
@@ -18,7 +17,7 @@ function createActualCatButtons() {
             pressFilterCategories.push(stepPlaceholderValue);
         }
     });
-    //call
+
     pressFilterCategories.sort();
 
     pressFilterCategories.forEach(category => {
@@ -49,7 +48,6 @@ function createActualYearButtons() {
         }
     });
 
-    //call
     pressFilterYears.sort();
     pressFilterYears.reverse();
 
@@ -147,14 +145,6 @@ function buttonsStarter() {
     hideSystemTags();
 }
 
-//wait for the language switch to click and write it into a variable
-Weglot.on("switchersReady", function () {
-    let weGlotSwitcherEl = document.querySelector('li.wg-li');
-    weGlotSwitcherEl.addEventListener('mousedown', function () {
-        userChangeLangByClick = true;
-    });
-})
-
 //After changing the language - check if the change was triggered by a user or automatically, if a user - reload the page
 Weglot.on("languageChanged", function () {
     buttonsStarter();
@@ -171,30 +161,30 @@ Weglot.on("initialized", function () {
 
 finSweetStartPaginator();
 
+function listenToSwitcher() {
+    let weGlotSwitcherEl = document.querySelector('li.wg-li');
+    weGlotSwitcherEl.addEventListener('mousedown', function () {
+        userChangeLangByClick = true;
+    });
+}
 
-//подключение пагинации ломаю все фитры, потому что для их формирования надо видеть полный список карточек. 
-//лучший вариант сейчас, чтобы выйти из ситуации — создать ещё 1 дополнительный лист, для формирования кнопок фильтра, чтобы пагинация не ломала ничего
-//прежде всего для спокойствия стоит посмотреть ролики finsweet по тому как добавлять пагинацию
-//после этого, с чистой душой смогу пойти делать меню и проверять все остальные страницы
-//остальные задачи по фильтрам не выглядят сложными
-//если не будет работать пагинатор — попробовать написать свой? :)))) главное хорошо всё продумать
-//причина, по которой сейчас не работают теги в некоторых карточках — задержка загрузки всех страниц, поэтому нужно запускать очистку тегов с задержкрй
-//мне надо слушать изменения пагинатора только в начале загрузки страницы
 
 //function that will be executed after the paginator is loaded
 let pagStatus = 0;
+
 function testFun() {
     if (pagStatus < 1) {
-        console.log('lets start ***finSweetStartFilter');
+        console.log('lets start ***finSweet');
 
         Weglot.initialize({
             api_key: 'wg_a06f3a7b6acb04572ef530639d3aa00a6'
         });
         setTimeout(finSweetStartFilter, 1000);
+        setTimeout(listenToSwitcher, 1000);
     }
     pagStatus = pagStatus + 1;
 }
-//create a variable for the timer that can be overwritten
+
 let pagTimer;
 //at the beginning of the function pagOs -> clear the timer, if there was one, and start it again
 function pagObs() {
@@ -212,6 +202,3 @@ const observerOptions = {
 const observer = new MutationObserver(pagObs);
 observer.observe(targetNode, observerOptions);
 //______________________________________________________________________________
-
-
-
