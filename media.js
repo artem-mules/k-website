@@ -51,6 +51,7 @@ function createActualYearButtons() {
 
     //call
     pressFilterYears.sort();
+    pressFilterYears.reverse();
 
     pressFilterYears.forEach(category => {
         let clonableFiterButton = document.querySelector('.clonable-elements .media-filter__item').cloneNode(true);
