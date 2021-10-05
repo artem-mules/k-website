@@ -23,6 +23,25 @@ function tagsForLanguages() {
             }
         });
     }
+
+
+    //exclude cards that refer to (condition)
+    let cardsAlleTags = document.querySelectorAll('.press-wrapper .media-filter__item .navigation');
+    if (weGlotCurrentLang == 'de') {
+        cardsAlleTags.forEach(alleTag => {
+            if (alleTag.textContent == 'English' || alleTag.textContent == 'Andere Sprachen') {
+                let currentHidenCard = alleTag.parentElement.parentElement.parentElement.parentElement;
+                currentHidenCard.remove();
+            }
+        });
+    } else {
+        cardsAlleTags.forEach(alleTag => {
+            if (alleTag.textContent == 'German' || alleTag.textContent == 'Regional press') {
+                let currentHidenCard = alleTag.parentElement.parentElement.parentElement.parentElement;
+                currentHidenCard.remove();
+            }
+        });
+    }
 }
 
 //Add actual buttons
@@ -195,7 +214,7 @@ let pagStatus = 0;
 
 function testFun() {
     if (pagStatus < 1) {
-        console.log('lets start ***finSweet');
+        // console.log('lets start ***finSweet');
 
         Weglot.initialize({
             api_key: 'wg_a06f3a7b6acb04572ef530639d3aa00a6'
