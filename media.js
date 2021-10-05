@@ -67,7 +67,7 @@ function createActualYearButtons() {
 function hideSystemTags() {
     let cardsAlleTags = document.querySelectorAll('.press-wrapper .media-filter__item .navigation');
     cardsAlleTags.forEach(alleTag => {
-        if (alleTag.textContent != 'Alle' && alleTag.textContent != 'All' && alleTag.textContent != 'English' && alleTag.textContent != 'Deutsch' && alleTag.textContent != 'German') {
+        if (alleTag.textContent != 'English' && alleTag.textContent != 'Deutsch' && alleTag.textContent != 'German') {
             let currentAlleTag = alleTag.parentElement;
             currentAlleTag.classList.remove('media-filter__item--cards');
         }
