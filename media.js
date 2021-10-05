@@ -123,7 +123,8 @@ function finSweetStartFilter() {
         },
         {
             filterWrapper: '.media-filter--pr-year',
-            filterType: 'multi'
+            filterType: 'multi',
+            filterByClass: ".media-filter__item--year"
         }
         ]
 
