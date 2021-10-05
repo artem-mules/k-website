@@ -25,6 +25,7 @@ yearPlaceholders.forEach(placeholder => {
     }
 });
 pressFilterYears.sort();
+pressFilterYears.reverse();
 
 //Add actual buttons
 pressFilterYears.forEach(category => {
