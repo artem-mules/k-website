@@ -1,3 +1,4 @@
+//@collapse
 (function () {
     fsComponent2 = new FsLibrary('.cl__grid__media-list-wrapper--press')
 })();
@@ -72,7 +73,6 @@ function doFilterButtons() {
     });
 }
 
-
 function hideLangItems() {
     let weGlotLang = Weglot.getCurrentLang();
     let allCards = document.querySelectorAll('.cl-i__grid__media-list-wrapper');
@@ -92,7 +92,7 @@ function hideLangItems() {
         });
     }
 }
-//form script
+
 function contactPageStart() {
 
     //____________________________________________________________________________________
@@ -109,6 +109,5 @@ function contactPageStart() {
         }
     });
 }
-
 
 finSweetStartPaginator();
