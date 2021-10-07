@@ -176,3 +176,8 @@ Weglot.on("languageChanged", function () {
     }
     userChangeLangByClick = false;
 })
+
+//after starting weGlot - we ask to run finsweet after 1 second, we only do this here because initialization always happens and the language change does not always
+Weglot.on("initialized", function () {
+    contactPageStart();
+})
