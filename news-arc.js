@@ -1,8 +1,9 @@
-function startFinsweet() {
-    (function () {
-        let fsComponent2 = new FsLibrary('.cl__grid__media-list-wrapper--press')
-        fsComponent2.combine()
+(function () {
+    fsComponent2 = new FsLibrary('.cl__grid__media-list-wrapper--press')
+})();
 
+function startFinsweetFilter() {
+    (function () {
         let myFilters = [{
             filterWrapper: '.media-filter--pr-year',
             filterType: 'exclusive',
@@ -17,6 +18,32 @@ function startFinsweet() {
             }
         })
     })();
+}
+
+function finSweetStartPaginator() {
+
+    (function () {
+        fsComponent2.loadmore({
+            button: ".load-more-button",
+            resetIx: true,
+            loadAll: true,
+            paginate: {
+                enable: true,
+                itemsPerPage: 4,
+                insertPagination: '.pagination-container',
+                bgColor: '#FFFFFF',
+                bgColorActive: '#240c2e',
+                textColor: '#240c2e',
+                textColorActive: '#FFFFFF',
+                borderColor: '#3D315B'
+            },
+            animation: {
+                enable: false
+            }
+        })
+
+    })();
+
 }
 
 function doFilterButtons() {
@@ -82,3 +109,6 @@ function contactPageStart() {
         }
     });
 }
+
+
+finSweetStartPaginator();
