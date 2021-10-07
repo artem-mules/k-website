@@ -3,6 +3,8 @@
     fsComponent2 = new FsLibrary('.cl__grid__media-list-wrapper--press')
 })();
 
+let userChangeLangByClick;
+
 function startFinsweetFilter() {
     (function () {
         let myFilters = [{
@@ -19,6 +21,25 @@ function startFinsweetFilter() {
             }
         })
     })();
+
+
+    let filterAlleTagsClick = document.querySelectorAll('.media-filter--pr-year .media-filter__item');
+    filterAlleTagsClick[0].click();
+    filterAlleTagsClick[0].click();
+
+    function apperMedia() {
+        let mediaWrapperEl = document.querySelector('#media-list-wrapper--op');
+        mediaWrapperEl.classList.remove('media-list-wrapper--op--0');
+    }
+
+    setTimeout(apperMedia, 500);
+}
+
+function listenToSwitcher() {
+    let weGlotSwitcherEl = document.querySelector('li.wg-li');
+    weGlotSwitcherEl.addEventListener('mousedown', function () {
+        userChangeLangByClick = true;
+    });
 }
 
 function finSweetStartPaginator() {
@@ -111,3 +132,47 @@ function contactPageStart() {
 }
 
 finSweetStartPaginator();
+
+//function that will be executed after the paginator is loaded
+let pagStatus = 0;
+
+function testFun() {
+    if (pagStatus < 1) {
+        // console.log('lets start ***finSweet');
+
+        Weglot.initialize({
+            api_key: 'wg_a06f3a7b6acb04572ef530639d3aa00a6'
+        });
+        setTimeout(hideLangItems, 1000);
+        setTimeout(doFilterButtons, 1050);
+        setTimeout(startFinsweetFilter, 1100);
+        setTimeout(listenToSwitcher, 1150);
+    }
+    pagStatus = pagStatus + 1;
+}
+
+let pagTimer;
+//at the beginning of the function pagOs -> clear the timer, if there was one, and start it again
+function pagObs() {
+    clearTimeout(pagTimer);
+    pagTimer = setTimeout(testFun, 200);
+}
+//start tracking the container with the paginator, it is important for us to understand when it changes
+const targetNode = document.querySelector(".pagination-container");
+const observerOptions = {
+    childList: true,
+    attributes: true,
+    subtree: true
+}
+//Here we specify the function that will be run whenever the tree changes
+const observer = new MutationObserver(pagObs);
+observer.observe(targetNode, observerOptions);
+//______________________________________________________________________________
+
+//After changing the language - check if the change was triggered by a user or automatically, if a user - reload the page
+Weglot.on("languageChanged", function () {
+    if (userChangeLangByClick == true) {
+        document.location.reload();
+    }
+    userChangeLangByClick = false;
+})
