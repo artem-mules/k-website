@@ -215,7 +215,7 @@ Weglot.on("initialized", function () {
 finSweetStartPaginator();
 
 function listenToSwitcher() {
-    let weGlotSwitcherEl = document.querySelector('li.wg-li');
+    let weGlotSwitcherEl = document.querySelector('.dropdown-toggle--header--lang');
     weGlotSwitcherEl.addEventListener('mousedown', function () {
         userChangeLangByClick = true;
     });
