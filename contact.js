@@ -121,7 +121,6 @@ function contactPageStart() {
                     var countryCode = (resp && resp.country) ? resp.country : "us";
                     callback(countryCode);
                     countryInfo = countryCode;
-                    console.log(countryInfo + ' this is var');
                 });
             },
             utilsScript: "https://intl-tel-input.com/node_modules/intl-tel-input/build/js/utils.js?1613236686837"
