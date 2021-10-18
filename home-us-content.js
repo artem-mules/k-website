@@ -1,10 +1,15 @@
 let homeHiddenSection = document.querySelector('.section--home-us');
-let currentCountry;
+let url = 'https://api.geoapify.com/v1/ipinfo?apiKey=35edb2debb9a4ee785f52b02f7127781';
+let countryCode;
 
-$.get("https://ipinfo.io", function (response) {
-    currentCountry = response.country;
+fetch(url)
+    .then(res => res.json())
+    .then((out) => {
+        let countryObject = out;
+        countryCode = countryObject.country.iso_code;
 
-    if (currentCountry == 'US') {
-        homeHiddenSection.classList.remove('section--home-us');
-    }
-}, "jsonp");
+        if (countryCode == 'US') {
+            homeHiddenSection.classList.remove('section--home-us');
+        }
+    })
+    .catch(err => { throw err });
