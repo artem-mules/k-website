@@ -1,3 +1,4 @@
+let countryInfo;
 function contactPageStart() {
     let countyHiddenInput = document.querySelector('.input--selected-country');
 
@@ -119,6 +120,8 @@ function contactPageStart() {
                 $.get('https://ipinfo.io', function () { }, "jsonp").always(function (resp) {
                     var countryCode = (resp && resp.country) ? resp.country : "us";
                     callback(countryCode);
+                    countryInfo = countryCode;
+                    console.log(countryInfo + ' this is var');
                 });
             },
             utilsScript: "https://intl-tel-input.com/node_modules/intl-tel-input/build/js/utils.js?1613236686837"
