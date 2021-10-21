@@ -17,7 +17,7 @@ function tagsForLanguages() {
         });
     } else {
         filterAlleTags.forEach(alleTag => {
-            if (alleTag.textContent != 'English' && alleTag.textContent != 'German' && alleTag.textContent != 'Other languages' && alleTag.textContent != 'Regional press') {
+            if (alleTag.textContent != 'English' && alleTag.textContent != 'German' && alleTag.textContent != 'Other languages' && alleTag.textContent != 'Regional press' && alleTag.textContent != 'Local press') {
                 let currentAlleTag = alleTag.parentElement;
                 currentAlleTag.classList.remove('media-filter__item--cards');
             }
@@ -36,7 +36,7 @@ function tagsForLanguages() {
         });
     } else {
         cardsAlleTags.forEach(alleTag => {
-            if (alleTag.textContent == 'German' || alleTag.textContent == 'Regional press') {
+            if (alleTag.textContent == 'German' || alleTag.textContent == 'Regional press' || alleTag.textContent == 'Local press') {
                 let currentHidenCard = alleTag.parentElement.parentElement.parentElement.parentElement;
                 currentHidenCard.remove();
             }
