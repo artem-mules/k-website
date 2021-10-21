@@ -10,6 +10,14 @@ fetch(url)
 
         if (countryCode == 'US') {
             homeHiddenSection.classList.remove('section--home-us');
+        } else {
+            //us branchen content
+            let usaAttributeElements = document.querySelectorAll('[only-for-us]');
+            usaAttributeElements.forEach(element => {
+                if (element.getAttribute('only-for-us') == 'true') {
+                    element.parentElement.parentElement.remove()
+                }
+            });
         }
     })
     .catch(err => { throw err });
