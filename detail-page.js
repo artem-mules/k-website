@@ -37,3 +37,13 @@ parsed.forEach(parsedObj => {
         }
     }
 });
+
+//remove unnecessary boarders
+
+let readySectionName = document.querySelectorAll('.pop-up-row--section-name');
+readySectionName.forEach(readyName => {
+    if (readyName.previousSibling != null) {
+        let currentReadyName = readyName.previousSibling;
+        currentReadyName.classList.add('border-bottom--none');
+    }
+});
