@@ -1,4 +1,3 @@
-//@collapse
 (function () {
     fsComponent2 = new FsLibrary('.cl__grid__media-list-wrapper--press')
 })();

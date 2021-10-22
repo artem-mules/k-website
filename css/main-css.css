@@ -543,3 +543,7 @@ screen and (-ms-high-contrast: none) {
 .menu-fixed {
     overflow:hidden;
 }
+
+.w--current {
+pointer-events: none;
+}
