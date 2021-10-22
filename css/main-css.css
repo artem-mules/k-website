@@ -504,3 +504,42 @@ word-break: break-all;
 input, select {
 	-webkit-appearance: none !important;
 }
+
+
+/* Firefox: */
+
+@-moz-document url-prefix() {
+  select {
+    text-indent: -2px;
+  }
+}
+
+
+/* Edge: */
+
+@supports (-ms-ime-align: auto) {
+  select {
+    width: calc(100% + 4px);
+    margin-left: -4px;
+  }
+}
+
+
+/* IE11: */
+
+@media screen and (-ms-high-contrast: active),
+screen and (-ms-high-contrast: none) {
+  select {
+    width: calc(100% + 4px);
+    margin-left: -3px;
+  }
+}
+
+/* border radius safari */
+.mashine-page__hero-cta__video__wrapper, .swiper-container--main-page, .klm-bg-video {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
+
+.menu-fixed {
+    overflow:hidden;
+}
