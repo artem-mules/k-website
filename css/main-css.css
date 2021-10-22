@@ -487,3 +487,16 @@ min-height: 650px;
 .h1, .h2, .h3, .h4 {
 word-break: break-all;
 }
+
+.t-0 {
+  margin-top: 0;
+}
+
+.b-0 {
+  margin-bottom: 0;
+}
+
+.tb-0 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
