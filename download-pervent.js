@@ -18,13 +18,10 @@ formUsaUser.addEventListener('submit', function() {
 
 
 function userUsaCheck() {
-    console.log('функция запустилась');
     usLinks.forEach(downloadLink => {
         downloadLink.addEventListener('click', function (event) {
             if (localStorage.getItem('user') == null) {
-                console.log('в локал сторадж пусто');
                 event.preventDefault();
-                console.log('прервали действие ссылки');
                 formOpenTrigger.click();
             }
         });
@@ -40,7 +37,6 @@ fetch(url)
 
         if (countryCode == 'US') {
             userUsaCheck();
-            console.log('страна= ' + countryCode);
         }
     })
     .catch(err => { throw err });
