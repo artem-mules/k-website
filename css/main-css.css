@@ -51,9 +51,6 @@ pointer-events: none !important;
   border-radius: 4px;
 }
 
-* {
-
-}
 
 .klm-image__item {
 background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, #1C1C1C 100%), url(1615905187075.jpg);
@@ -163,8 +160,8 @@ left: -150px !important;
   border-bottom: none;
 }
 
-.branchen-menu__list, .popup, .popup-wrapper {
-    background: rgba(0,0,0,0.8);
+.branchen-menu__list, .popup, .popup-wrapper, .branchen-menu__no-corner, .branchen-menu, .header-drop-nav {
+    background: rgba(28, 28, 28, 0.9);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
 }
@@ -254,6 +251,44 @@ word-wrap: break-word !important;
   border-radius: 10px;
 }
 
+/* scroll for kontakt page */
+
+.cl__hand-string::-webkit-scrollbar-track
+{
+	background-color: transparent;
+}
+
+.cl__hand-string::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: transparent;
+}
+
+.cl__hand-string::-webkit-scrollbar-thumb
+{
+	background-color: #727272;
+  border-radius: 10px;
+}
+
+/* scroll for kontakt page --landscape*/
+
+.cl__countries::-webkit-scrollbar-track
+{
+	background-color: transparent !important;
+}
+
+.cl__countries::-webkit-scrollbar
+{
+	width: 10px !important;
+	background-color: transparent !important;
+}
+
+.cl__countries::-webkit-scrollbar-thumb
+{
+	background-color: #727272 !important;
+  border-radius: 10px !important;
+}
+
 @media (max-width: 767px) {
 .popup-block__2::-webkit-scrollbar-track
 {
@@ -269,10 +304,6 @@ display: none;
 {
 display: none;
 }
-}
-
-* {
-
 }
 
 @media (min-width: 992px) and (max-width: 1280px) {
@@ -370,10 +401,14 @@ display: none !important;
 .w-richtext figure.w-richtext-align-center.w-richtext-figure-type-image>div {
     width: 100%;
 }
-
+/* here we adaptived menu for 992 */
 @media (max-width: 1084px) and (min-width: 992px) {
 .dropdown--header, .dropdown-link--header {
-	margin-left: 20px;
+	margin-left: 35px;
+}
+a.buttons.buttons--header.w-inline-block {
+    margin-left: 35px;
+    margin-right: 35px;
 }
 }
 
@@ -402,3 +437,53 @@ pointer-events: none;
 	border-bottom: none !important;
 }
 
+@media (max-width: 1185px) and (min-width: 992px) {
+/* here left and right paddings for cards on 992 */
+.bottom-nav__item-content, .card--about-page, .social-card__inner, .ihre-karriere__2, .card.card--red, .card.card--white {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}
+
+.social-buttons a.buttons.buttons--empty.buttons--small {
+    width: 100% !important;
+}
+.buttons-soc-1 {
+    margin-bottom: 10px;
+}
+.social-card--linkedin {
+min-height: 650px;
+}
+.bottom-nav__item-content {
+	min-height: 600px;
+}
+.cl-i__double-div__container {
+    flex-direction: row-reverse !important;
+    flex-direction: column !important;
+}
+.cl-i__double-div__container__wrapper {
+    max-width: none !important;
+    width: 100% !important;
+}
+.cl-i__double-div__container__wrapper.m__auto----wm288-and-100per---34 {
+    order: 1 !important;
+}
+.cl-i__double-div__container__image._12 {
+    margin-bottom: 30px !important;
+}
+
+._1__contact-page__2 {
+    padding-left: 0px !important;
+}
+
+.slider-people__personal-wrapper.slider-people__personal-wrapper--single {
+    margin-top: 40px !important;
+}
+
+.slider-people__personal-wrapper {
+    max-width: 260px !important;
+}
+}
+
+.h1, .h2, .h3, .h4 {
+word-break: break-all;
+}
