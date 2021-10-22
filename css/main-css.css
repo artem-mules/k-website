@@ -15,7 +15,7 @@
 .branchen-menu__list::-webkit-scrollbar
 {
 	width: 6px;
-	background-color: #959595;
+	background-color: #7a6b6b;
   border-radius: 4px;
 }
 
@@ -210,11 +210,6 @@ select {
 
 .pixel-perfect {
 pointer-events: none;
-}
-
-
-.h1, .break-word {
-word-wrap: break-word !important;
 }
 
 .element-hide {
@@ -484,9 +479,6 @@ min-height: 650px;
 }
 }
 
-.h1, .h2, .h3, .h4 {
-word-break: break-all;
-}
 
 .t-0 {
   margin-top: 0;
@@ -542,8 +534,4 @@ screen and (-ms-high-contrast: none) {
 
 .menu-fixed {
     overflow:hidden;
-}
-
-.w--current {
-pointer-events: none;
 }
