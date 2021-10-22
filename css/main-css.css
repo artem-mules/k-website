@@ -500,3 +500,7 @@ word-break: break-all;
   margin-top: 0;
   margin-bottom: 0;
 }
+
+input, select {
+	-webkit-appearance: none !important;
+}
