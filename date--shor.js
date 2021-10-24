@@ -1,39 +1,47 @@
-    let months = document.querySelectorAll('.mounth');
-            months.forEach(element => {
-                if (element.textContent == 'Jan') {
-        element.textContent = 'Jan'
+let dateLabels = document.querySelectorAll('.body-3--date');
+
+dateLabels.forEach(label => {
+    splittedLabel = label.textContent.split(' ')
+    currentNonth = splittedLabel[0];
+
+    if (currentNonth  == 'Jan') {
+        currentNonth  = 'Jan'
     }
-    if (element.textContent == 'Feb') {
-        element.textContent = 'Feb'
+
+    if (currentNonth  == 'Feb') {
+        currentNonth  = 'Feb'
     }
-    if (element.textContent == 'Mar') {
-        element.textContent = 'Mär'
+    if (currentNonth  == 'Mar') {
+        currentNonth  = 'Mär'
     }
-    if (element.textContent == 'Apr') {
-        element.textContent = 'Apr'
+    if (currentNonth  == 'Apr') {
+        currentNonth  = 'Apr'
     }
-    if (element.textContent == 'May') {
-        element.textContent = 'Mai'
+    if (currentNonth  == 'May') {
+        currentNonth  = 'Mai'
     }
-    if (element.textContent == 'Jun') {
-        element.textContent = 'Jun'
+    if (currentNonth  == 'Jun') {
+        currentNonth  = 'Jun'
     }
-    if (element.textContent == 'Jul') {
-        element.textContent = 'Jul'
+    if (currentNonth  == 'Jul') {
+        currentNonth  = 'Jul'
     }
-    if (element.textContent == 'Aug') {
-        element.textContent = 'Aug'
+    if (currentNonth  == 'Aug') {
+        currentNonth  = 'Aug'
     }
-    if (element.textContent == 'Sep') {
-        element.textContent = 'Sep'
+    if (currentNonth  == 'Sep') {
+        currentNonth  = 'Sep'
     }
-    if (element.textContent == 'Oct') {
-        element.textContent = 'Okt'
+    if (currentNonth  == 'Oct') {
+        currentNonth  = 'Okt'
     }
-    if (element.textContent == 'Nov') {
-        element.textContent = 'Nov'
+    if (currentNonth  == 'Nov') {
+        currentNonth  = 'Nov'
     }
-    if (element.textContent == 'Dec') {
-        element.textContent = 'Dez'
+    if (currentNonth  == 'Dec') {
+        currentNonth  = 'Dez'
     }
+
+
+    label.textContent = (currentNonth + ' ' + splittedLabel[1] + ' ' + splittedLabel[2]);
 });
