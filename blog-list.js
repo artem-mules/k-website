@@ -36,9 +36,9 @@ function startFinsweetFilter() {
 
 function listenToSwitcher() {
     let weGlotSwitcherEl = document.querySelector('li.wg-li');
-    weGlotSwitcherEl.addEventListener('mousedown', function () {
-        userChangeLangByClick = true;
-    });
+    // weGlotSwitcherEl.addEventListener('mousedown', function () {
+    //     userChangeLangByClick = true;
+    // });
 }
 
 function finSweetStartPaginator() {
