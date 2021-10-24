@@ -15,7 +15,7 @@
 .branchen-menu__list::-webkit-scrollbar
 {
 	width: 6px;
-	background-color: #7a6b6b;
+	background-color: #959595;
   border-radius: 4px;
 }
 
@@ -534,4 +534,30 @@ screen and (-ms-high-contrast: none) {
 
 .menu-fixed {
     overflow:hidden;
+}
+
+.body-3--map-address-item__item  {
+    display: inline !important;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size .3s;
+}
+
+.body-3--map-address-item__item:hover, a:focus {
+    background-size: 100% 1px;
+}
+
+a.body-3--contact {
+    display: inline;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size .3s;
+}
+
+a.body-3--contact:hover, a:focus {
+    background-size: 100% 1px;
 }
