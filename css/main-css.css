@@ -561,3 +561,16 @@ a.body-3--contact {
 a.body-3--contact:hover, a:focus {
     background-size: 100% 1px;
 }
+
+a.hand-string__p {
+    display: inline;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0% 100%;
+    background-repeat: no-repeat;
+    background-size: 0% 1px;
+    transition: background-size .3s;
+}
+
+a.hand-string__p:hover, a:focus {
+    background-size: 100% 1px;
+}
