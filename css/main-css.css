@@ -470,9 +470,9 @@ min-height: 650px;
     padding-left: 0px !important;
 }
 
-.slider-people__personal-wrapper.slider-people__personal-wrapper--single {
+/* .slider-people__personal-wrapper.slider-people__personal-wrapper--single {
     margin-top: 40px !important;
-}
+} */
 
 .slider-people__personal-wrapper {
     max-width: 260px !important;
