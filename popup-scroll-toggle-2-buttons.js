@@ -15,3 +15,11 @@ popUpCloseButton.addEventListener('click', function () {
         bred.classList.remove('menu-fixed');
     });
 });
+
+//все ссылки в новой вкладке
+let allLinksOnPage = document.querySelectorAll('a');
+allLinksOnPage.forEach(a => {
+    if (a.getAttribute('target') == null) {
+        a.setAttribute('target', '_blank')
+    }
+});
