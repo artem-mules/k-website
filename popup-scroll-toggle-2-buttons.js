@@ -17,7 +17,7 @@ popUpCloseButton.addEventListener('click', function () {
 });
 
 //все ссылки в новой вкладке
-let allLinksOnPage = document.querySelectorAll('a');
+let allLinksOnPage = document.querySelectorAll('a.cl-i__download-links__3-link-wrapper');
 allLinksOnPage.forEach(a => {
     if (a.getAttribute('target') == null) {
         a.setAttribute('target', '_blank')
