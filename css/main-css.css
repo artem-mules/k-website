@@ -574,3 +574,7 @@ a.hand-string__p {
 a.hand-string__p:hover, a:focus {
     background-size: 100% 1px;
 }
+
+*:focus {
+    outline: none;
+}
