@@ -1,5 +1,5 @@
 function createFilter() {
-    let allSectionsCategories = document.querySelectorAll('p.h2__list-download');
+    let allSectionsCategories = document.querySelectorAll('h2.h2__list-download');
     let dropAppendParent = document.querySelector('.branchen-menu__list');
 
     allSectionsCategories.forEach(element => {
