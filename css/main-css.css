@@ -584,3 +584,8 @@ a.hand-string__p:hover, a:focus {
   transition: 400ms;
   opacity: 0;
 }
+
+.fix-bug__menu {
+    transform: none !important;
+    transform-style: unset !important;
+}
