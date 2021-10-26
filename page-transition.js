@@ -1,4 +1,5 @@
 let allHrefOnThePage = document.querySelectorAll('a');
+let bodyOfThisPage = document.querySelector('body');
 
 allHrefOnThePage.forEach(link => {
     link.addEventListener('click', function (event) {
@@ -9,7 +10,8 @@ allHrefOnThePage.forEach(link => {
             function goToLink() {
                 window.location = currentHrefValue;
             }
-            setTimeout(goToLink, 1500);
+            setTimeout(goToLink, 500);
+            bodyOfThisPage.classList.add('body-transition');
         }
     });
 });

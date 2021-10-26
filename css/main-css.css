@@ -578,3 +578,9 @@ a.hand-string__p:hover, a:focus {
 *:focus {
     outline: none;
 }
+
+.body-transition {
+  position: relative;
+  transition: 400ms;
+  opacity: 0;
+}
