@@ -589,3 +589,9 @@ a.hand-string__p:hover, a:focus {
     transform: none !important;
     transform-style: unset !important;
 }
+
+@media (max-width: 448px) {
+ .h1 {
+  font-size: 8vw !important;
+ }
+}
