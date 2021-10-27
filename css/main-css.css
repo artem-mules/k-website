@@ -651,3 +651,9 @@ a.hand-string__p:hover, a:focus {
     margin-right: 5px;
   }
 }
+
+
+
+.cl-i__grid__media-list-wrapper .media-filter__item {
+  opacity: .6;
+}
