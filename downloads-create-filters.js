@@ -8,7 +8,7 @@ function createFilter() {
             let clonableDropItem = document.querySelector('.w-dropdown-link').cloneNode(true);
             clonableDropItem.classList.remove('h5__branchen-menu--hidden');
             clonableDropItem.textContent = element.textContent;
-            let dropItemNewHref = ('#' + element.textContent)
+            let dropItemNewHref = ('#' + element.textContent.toLowerCase())
             clonableDropItem.setAttribute('href', dropItemNewHref);
             dropAppendParent.append(clonableDropItem);
         }
