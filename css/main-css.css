@@ -601,3 +601,23 @@ a.hand-string__p:hover, a:focus {
   font-size: 5.5vw !important;
  }
 }
+
+@media (max-width: 767px) {
+  .fs-pagination ul li {
+    padding: 0px 0px;
+  }
+
+  .fs-pagination ul li a {
+    padding: 4px 5px;
+  }
+
+  .fs-pagination {
+    margin: auto;
+  }
+  .fs-pagination-page.fs-pagination-next {
+    margin-left: 5px;
+  }
+  .fs-pagination-page.fs-pagination-prev {
+    margin-right: 5px;
+  }
+}
