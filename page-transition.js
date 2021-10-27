@@ -12,7 +12,8 @@ allHrefOnThePage.forEach(link => {
             }
             setTimeout(goToLink, 500);
             bodyOfThisPage.classList.add('body-transition');
-        } else {
+        } 
+        if (link.getAttribute('target') == '_blank') {
             window.open(currentHrefValue, '_blank').focus();
         }
     });

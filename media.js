@@ -1,3 +1,11 @@
+function pagOnClickScroll() {
+    let pagWrapper = document.querySelector('#wf-fslib-pagination');
+    let hiddenPagTrigger = document.querySelector('.hidden-link');
+    pagWrapper.addEventListener('click', function () {
+        setTimeout(hiddenPagTrigger.click() , 300);
+    });
+}
+
 function translateDateToGerman() {
     let dateLabels = document.querySelectorAll('.body-3--date');
 
@@ -202,6 +210,7 @@ function finSweetStartFilter() {
 
     setTimeout(apperMedia, 500);
     setTimeout(translateDateToGerman, 400);
+    setTimeout(pagOnClickScroll, 600);
 
 }
 
