@@ -27,6 +27,28 @@
 
 
 
+.media-filter::-webkit-scrollbar-track
+{
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.1); */
+	background-color: transparent;
+  border-radius: 4px;
+}
+
+.media-filter::-webkit-scrollbar
+{
+  height: 6px;
+	background-color: transparent;
+  border-radius: 4px;
+}
+
+.media-filter::-webkit-scrollbar-thumb
+{
+	background-color: #959595;
+  border-radius: 4px;
+}
+
+
+
 .pe-none, .map-container__2-bg, .double-div__menu__shadow, .cl-i__double-div__container__embed, .cl-i__fertig-list-wrapper__1__image {
 pointer-events: none !important;
 }
