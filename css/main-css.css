@@ -181,12 +181,20 @@ left: -150px !important;
 	padding-bottom: 0px;
   border-bottom: none;
 }
-
+/* 
 .branchen-menu__list, .popup, .popup-wrapper, .branchen-menu__no-corner, .branchen-menu, .header-drop-nav {
     background: rgba(28, 28, 28, 0.9);
     -webkit-backdrop-filter: saturate(180%) blur(20px);
     backdrop-filter: saturate(180%) blur(20px);
+} */
+
+.popup, .popup-wrapper, .header-drop-nav {
+    /* background: rgba(28, 28, 28, 0.9);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px); */
+    background-color: #1C1C1C !important;
 }
+
 
 
 .body-3__contact-table--hide {
