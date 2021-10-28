@@ -154,3 +154,10 @@ contactPageStart();
 Weglot.on("languageChanged", function () {
     contactPageStart();
 })
+
+
+//open support kontaktieren popup
+if (window.location.hash == '#support-kontaktieren') {
+    document.querySelector('#button-kontaktieren').click();
+    window.location.hash = '#support-kontaktieren';
+}
