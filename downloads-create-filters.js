@@ -22,19 +22,22 @@ createFilter();
 //пряем ausbildung
 let ausbildunSection = document.querySelector('.section-de');
 
-function hideAus() {
+function hideContent() {
+    let ausbildungLink = document.querySelector('a[href="#ausbildung"]');
 
     if (Weglot.getCurrentLang() == 'en') {
         ausbildunSection.classList.add('hide-element');
+        ausbildungLink.classList.add('hide-element');
     } else {
         ausbildunSection.classList.remove('hide-element');
+        ausbildungLink.classList.remove('hide-element');
     }
 }
 
 Weglot.on("initialized", function () {
-    hideAus();
+    hideContent();
 })
 
 Weglot.on("languageChanged", function () {
-    hideAus();
+    hideContent();
 })
