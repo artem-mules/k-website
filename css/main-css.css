@@ -657,3 +657,42 @@ a.hand-string__p:hover, a:focus {
 .cl-i__grid__media-list-wrapper .media-filter__item {
   opacity: .6;
 }
+
+
+@media (min-width: 992px) {
+  .branchecn-cl-i:nth-child(2n) .cl-i__double-div__container__image {
+    grid-column-end: 1 !important;
+    grid-column-start: 1 !important;
+  }
+  .branchecn-cl-i:nth-child(2n) .h2__cl-i__double-div__container {
+    grid-column-end: 2 !important;
+    grid-column-start: 2 !important;
+    padding-right: 0px !important;
+    padding-left: 85px;
+  }
+  .branchecn-cl-i:nth-child(2n) .body-3--branchen {
+    grid-column-end: 2 !important;
+    grid-column-start: 2 !important;
+    padding-right: 0px !important;
+    padding-left: 85px;
+  }
+}
+
+@media (max-width: 1090px) and (min-width: 992px) {
+  .body-3--branchen {
+    padding-right: 30px !important;
+  }
+  .cl-i__double-div__container--grid {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+
+  .branchecn-cl-i:nth-child(2n) .h2__cl-i__double-div__container {
+    padding-right: 0px !important;
+    padding-left: 30px;
+  }
+  .branchecn-cl-i:nth-child(2n) .body-3--branchen {
+    padding-right: 0px !important;
+    padding-left: 30px;
+  }
+}
