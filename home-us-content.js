@@ -21,3 +21,27 @@ fetch(url)
         }
     })
     .catch(err => { throw err });
+
+
+    //home hero-video
+//пряем ausbildung
+function hideContent() {
+    let enVideo = document.querySelector('[video-lang="en"]');
+    let deVideo = document.querySelector('[video-lang="de"]');
+
+    if (Weglot.getCurrentLang() == 'en') {
+        deVideo.classList.add('hide-element');
+        enVideo.classList.remove('hide-element');
+    } else {
+        deVideo.classList.remove('hide-element');
+        enVideo.classList.add('hide-element');
+    }
+}
+
+Weglot.on("initialized", function () {
+    hideContent();
+})
+
+Weglot.on("languageChanged", function () {
+    hideContent();
+})
