@@ -295,6 +295,49 @@ pointer-events: none;
   border-radius: 10px;
 }
 
+/* popup1 */
+
+.popup-content--4--contact::-webkit-scrollbar-track
+{
+	background-color: transparent;
+}
+
+.popup-content--4--contact::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: transparent;
+}
+
+.popup-content--4--contact::-webkit-scrollbar-thumb
+{
+	background-color: #727272;
+  border-radius: 10px;
+}
+
+@media (max-width: 767px) {
+
+/* popup1 */
+
+.popup-content--4--contact::-webkit-scrollbar-track
+{
+	background-color: transparent;
+	width: 4px !important;
+}
+
+.popup-content--4--contact::-webkit-scrollbar
+{
+	width: 4px !important;
+	background-color: transparent;
+}
+
+.popup-content--4--contact::-webkit-scrollbar-thumb
+{
+	width: 4px !important;
+	background-color: #727272;
+  border-radius: 10px;
+}
+}
+
 /* scroll for kontakt page --landscape*/
 
 .cl__countries::-webkit-scrollbar-track
