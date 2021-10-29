@@ -9,51 +9,99 @@ function pagOnClickScroll() {
 function translateDateToGerman() {
     let dateLabels = document.querySelectorAll('.body-3--date');
 
-    dateLabels.forEach(label => {
-        splittedLabel = label.textContent.split(' ')
-        currentNonth = splittedLabel[0];
+    if (Weglot.getCurrentLang() == 'de') {
+        dateLabels.forEach(label => {
+            splittedLabel = label.textContent.split(' ')
+            currentNonth = splittedLabel[0];
 
-        if (currentNonth == 'Jan') {
-            currentNonth = 'Jan'
-        }
+            if (currentNonth == 'Jan') {
+                currentNonth = 'Jan'
+            }
 
-        if (currentNonth == 'Feb') {
-            currentNonth = 'Feb'
-        }
-        if (currentNonth == 'Mar') {
-            currentNonth = 'Mär'
-        }
-        if (currentNonth == 'Apr') {
-            currentNonth = 'Apr'
-        }
-        if (currentNonth == 'May') {
-            currentNonth = 'Mai'
-        }
-        if (currentNonth == 'Jun') {
-            currentNonth = 'Jun'
-        }
-        if (currentNonth == 'Jul') {
-            currentNonth = 'Jul'
-        }
-        if (currentNonth == 'Aug') {
-            currentNonth = 'Aug'
-        }
-        if (currentNonth == 'Sep') {
-            currentNonth = 'Sep'
-        }
-        if (currentNonth == 'Oct') {
-            currentNonth = 'Okt'
-        }
-        if (currentNonth == 'Nov') {
-            currentNonth = 'Nov'
-        }
-        if (currentNonth == 'Dec') {
-            currentNonth = 'Dez'
-        }
+            if (currentNonth == 'Feb') {
+                currentNonth = 'Feb'
+            }
+            if (currentNonth == 'Mar') {
+                currentNonth = 'Mär'
+            }
+            if (currentNonth == 'Apr') {
+                currentNonth = 'Apr'
+            }
+            if (currentNonth == 'May') {
+                currentNonth = 'Mai'
+            }
+            if (currentNonth == 'Jun') {
+                currentNonth = 'Jun'
+            }
+            if (currentNonth == 'Jul') {
+                currentNonth = 'Jul'
+            }
+            if (currentNonth == 'Aug') {
+                currentNonth = 'Aug'
+            }
+            if (currentNonth == 'Sep') {
+                currentNonth = 'Sep'
+            }
+            if (currentNonth == 'Oct') {
+                currentNonth = 'Okt'
+            }
+            if (currentNonth == 'Nov') {
+                currentNonth = 'Nov'
+            }
+            if (currentNonth == 'Dec') {
+                currentNonth = 'Dez'
+            }
 
 
-        label.textContent = (currentNonth + ' ' + splittedLabel[1] + ' ' + splittedLabel[2]);
-    });
+            label.textContent = (currentNonth + ' ' + splittedLabel[1] + ' ' + splittedLabel[2]);
+        });
+    } else {
+        dateLabels.forEach(label => {
+            splittedLabel = label.textContent.split(' ')
+            currentNonth = splittedLabel[0];
+
+            if (currentNonth == 'Jan') {
+                currentNonth = 'Jan'
+            }
+
+            if (currentNonth == 'Feb') {
+                currentNonth = 'Feb'
+            }
+            if (currentNonth == 'Mär') {
+                currentNonth = 'Mar'
+            }
+            if (currentNonth == 'Apr') {
+                currentNonth = 'Apr'
+            }
+            if (currentNonth == 'Mai') {
+                currentNonth = 'May'
+            }
+            if (currentNonth == 'Jun') {
+                currentNonth = 'Jun'
+            }
+            if (currentNonth == 'Jul') {
+                currentNonth = 'Jul'
+            }
+            if (currentNonth == 'Aug') {
+                currentNonth = 'Aug'
+            }
+            if (currentNonth == 'Sep') {
+                currentNonth = 'Sep'
+            }
+            if (currentNonth == 'Okt') {
+                currentNonth = 'Oct'
+            }
+            if (currentNonth == 'Nov') {
+                currentNonth = 'Nov'
+            }
+            if (currentNonth == 'Dez') {
+                currentNonth = 'Dec'
+            }
+
+
+            label.textContent = (currentNonth + ' ' + splittedLabel[1] + ' ' + splittedLabel[2]);
+        });
+    }
 
 }
 
