@@ -9,14 +9,14 @@
     },
     {
         "name-of-section": "Achsen: Dynamik",
-        "string-1": "vmax X, Y, Z @ 60 m/min",
-        "string-2": "amax X @ 10 m/s²",
-        "string-3": "amax Y @ 15 m/s²",
-        "string-4": "amax Z @ 20 m/s²",
-        "string-5": "vmax B @ 100 1/min",
-        "string-6": "vmax C @ 200 1/min",
-        "string-7": "vmax B @ 100 1/min",
-        "string-8": "vmax C @ 200 1/min",
+        "string-1": "v^max^ X, Y, Z @ 60 m/min",
+        "string-2": "a^max^ X @ 10 m/s²",
+        "string-3": "a^max^ Y @ 15 m/s²",
+        "string-4": "a^max^ Z @ 20 m/s²",
+        "string-5": "v^max^ B @ 100 1/min",
+        "string-6": "v^max^ C @ 200 1/min",
+        "string-7": "v^max^ B @ 100 1/min",
+        "string-8": "v^max^ C @ 200 1/min",
         "string-9": "Spitzenmoment B @ 648 Nm",
         "string-10": "Dauermoment B @ 360 Nm",
         "string-11": "Haltemoment B-Achse (geklemmt) @ 300 Nm",
@@ -33,7 +33,7 @@
         "name-of-section": "Werkzeugwechlser HSK 40",
         "string-1": "18-fach, 90-fach, 186-fach @ (*)",
         "string-2": "Werkzeugwechselzeit @ < 3 s",
-        "string-3": "Span zu Span Zeit @ < 4,5 s",
+        "string-3": "Span zu Span Zeit @ < 4.5 s",
         "string-4": "Max. Werkzeugdurchmesser für automatischen Wechsler @ 70 mm (jeder zweite Platz frei)",
         "string-5": "Max. Werkzeuglänge für automatischen Wechsler inkl. Werkzeughalter @ < 150 mm"
     },
@@ -43,21 +43,20 @@
     },
     {
         "name-of-section": "Arbeitsspindel HSK 25",
-        "string-1": "nmax @ 30.000 1/min",
-        "string-2": "nmax (optional) @ 50.000 1/min",
-        "string-3": "Drehmoment max. (S1) @ 1,6 Nm",
-        "string-4": "Leistung max. (S1) @ 6 kW"
+        "string-1": "n^max^ @ 30.000 1/min",
+        "string-2": "n^max^ (optional) @ 50.000 1/min",
+        "string-3": "Drehmoment ^max^ (S1) @ 1.6 Nm",
+        "string-4": "Leistung ^max^ (S1) @ 6 kW"
     },
     {
         "name-of-section": "Arbeitsspindel HSK 40",
-        "string-1": "nmax @ 42.000 1/min",
-        "string-2": "Drehmoment max. (S1) @ 5,9 Nm",
-        "string-3": "Leistung max. (S1) @ 15 kW"
+        "string-1": "n^max^ @ 42.000 1/min",
+        "string-2": "Drehmoment ^max^ (S1) @ 5.9 Nm",
+        "string-3": "Leistung ^max^ (S1) @ 15 kW"
     },
     {
         "name-of-section": "Spannsystem auf 5. Achse",
         "string-1": "Erowa ITS 148 @ (*)",
-        "string-2": "Sysstem 3R Magnum @ (*)"
+        "string-2": "System 3R Magnum @ (*)"
     }
 ]
-
