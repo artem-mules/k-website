@@ -38,13 +38,13 @@
     {
         "name-of-section": "Steuerung",
         "string-1": "Heidenhain iTNC530 / TNC640 @ (*)"
-    },  
+    },
     {
         "name-of-section": "Arbeitsspindel HSK 25",
         "string-1": "nmax @ 50.000 1/min",
         "string-2": "Drehmomentmax (S1) @ 1.6 Nm",
         "string-3": "Leistungmax @ 7.8 kW"
-    },  
+    },
     {
         "name-of-section": "Arbeitsspindel HSK 40",
         "string-1": "nmax @ 42.000 1/min",
