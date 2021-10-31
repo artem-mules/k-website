@@ -9,12 +9,12 @@
     },
     {
         "name-of-section": "Achsen: Dynamik",
-        "string-1": "Vmax X, Y, Z @ 30 m/min",
-        "string-2": "amax X, Y, Z @ 10 m/s²",
-        "string-3": "vmax B @ 100 1/min",
-        "string-4": "vmax C @ 200 1/min",
-        "string-5": "vmax B @ 100 1/min",
-        "string-6": "vmax C @ 200 1/min",
+        "string-1": "V^max^ X, Y, Z @ 30 m/min",
+        "string-2": "a^max^ X, Y, Z @ 10 m/s²",
+        "string-3": "v^max^ B @ 100 1/min",
+        "string-4": "v^max^ C @ 200 1/min",
+        "string-5": "v^max^ B @ 100 1/min",
+        "string-6": "v^max^ C @ 200 1/min",
         "string-7": "Spitzenmoment B @ 648 Nm",
         "string-8": "Dauermoment B @ 360 Nm",
         "string-9": "Haltemoment B-Achse (geklemmt) @ 300 Nm",
@@ -43,22 +43,22 @@
     },
     {
         "name-of-section": "Arbeitsspindel HSK 25",
-        "string-1": "nmax @ 30.000 1/min",
-        "string-2": "nmax (optional) @ 50.000 1/min",
-        "string-3": "Drehmomentmax (S1) @ 1,6 Nm",
-        "string-4": "Leistungmax (S1) @ 6 kW"
+        "string-1": "n^max^ @ 30.000 1/min",
+        "string-2": "n^max^ (optional) @ 50.000 1/min",
+        "string-3": "Drehmoment^max^ (S1) @ 1,6 Nm",
+        "string-4": "Leistung^max^ (S1) @ 6 kW"
     },
     {
         "name-of-section": "Arbeitsspindel HSK 40",
-        "string-1": "nmax @ 42.000 1/min",
-        "string-2": "Drehmomentmax (S1) @ 5,9 Nm",
-        "string-3": "Leistungmax (S1) @ 15 kW"
+        "string-1": "n^max^ @ 42.000 1/min",
+        "string-2": "Drehmoment^max^ (S1) @ 5,9 Nm",
+        "string-3": "Leistung^max^ (S1) @ 15 kW"
     },
     {
         "name-of-section": "Arbeitsspindel HSK 32",
-        "string-1": "nmax @ 40.000 1/min",
-        "string-2": "Drehmomentmax (S1) @ 2,1 Nm",
-        "string-3": "Leistungmax (S1) @ 6,3 kW"
+        "string-1": "n^max^ @ 40.000 1/min",
+        "string-2": "Drehmoment^max^ (S1) @ 2,1 Nm",
+        "string-3": "Leistung^max^ (S1) @ 6,3 kW"
     },
     {
         "name-of-section": "Spannsystem auf 5. Achse",

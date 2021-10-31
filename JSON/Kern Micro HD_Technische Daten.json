@@ -45,14 +45,14 @@
         "name-of-section": "Arbeitsspindel HSK 25",
         "string-1": "n^max^ @ 30.000 1/min",
         "string-2": "n^max^ (optional) @ 50.000 1/min",
-        "string-3": "Drehmoment ^max^ (S1) @ 1.6 Nm",
-        "string-4": "Leistung ^max^ (S1) @ 6 kW"
+        "string-3": "Drehmoment^max^ (S1) @ 1.6 Nm",
+        "string-4": "Leistung^max^ (S1) @ 6 kW"
     },
     {
         "name-of-section": "Arbeitsspindel HSK 40",
         "string-1": "n^max^ @ 42.000 1/min",
-        "string-2": "Drehmoment ^max^ (S1) @ 5.9 Nm",
-        "string-3": "Leistung ^max^ (S1) @ 15 kW"
+        "string-2": "Drehmoment^max^ (S1) @ 5.9 Nm",
+        "string-3": "Leistung^max^ (S1) @ 15 kW"
     },
     {
         "name-of-section": "Spannsystem auf 5. Achse",
