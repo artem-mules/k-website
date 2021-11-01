@@ -356,10 +356,7 @@ pointer-events: none;
 	background-color: #727272 !important;
   border-radius: 10px !important;
 }
-/* here is devider */
-/* here is devider */
-/* here is devider */
-/* here is devider */
+
 @media (max-width: 767px) {
 .popup-block__2::-webkit-scrollbar-track
 {
