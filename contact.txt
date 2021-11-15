@@ -64,8 +64,8 @@ function contactPageStart() {
 
     //____________________________________________________________________________________
     //countrues and sates_________________________________________________________________
-    let countryListInput = document.querySelector('#land__newsletter-ab');
-    let statesListInput = document.querySelector('#states__newsletter-ab');
+    let countryListInput = document.querySelector('#country-list');
+    let statesListInput = document.querySelector('.input-states');
     let stateTriggerShow = document.querySelector('.o__input-countries-wrapper__1');
     let stateTriggerClose = document.querySelector('.c__input-countries-wrapper__1');
 
