@@ -17,6 +17,7 @@ inputCountryList.addEventListener('change', function() {
             // console.log(inputCountryList.value);
             if (currentCountryArray.includes(inputCountryList.value)) {
                 currentCardTriggerOpen.click();
+                console.log(currentCardCounryList);
             } else {
                 currentCardTriggerClose.click();
             }
