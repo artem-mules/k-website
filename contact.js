@@ -1,3 +1,5 @@
+console.log('hi hi hi');
+
 let countryInfo;
 function contactPageStart() {
     let countyHiddenInput = document.querySelector('.input--selected-country');
@@ -50,7 +52,7 @@ function contactPageStart() {
         btn.addEventListener('click', function () {
             popupTrigger2__open.click();
             popupTrigger2__open.nextSibling.classList.add('current-close');
-            countyHiddenInput.value = btn.textContent;
+            countyHiddenInput.value = btn.getAttribute('support-county');
         });
     });
 
