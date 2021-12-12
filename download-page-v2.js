@@ -1,6 +1,11 @@
 let collectionItems = document.querySelectorAll('.cl-i__download-data');
+let pageWrapper = document.querySelector('.page-wrapper');
 let sectionsList = new (Array);
+let sectionsTask = new (Array);
+let downloadsList = new (Array);
 
+
+//создаём массив из объектов dlownlads
 collectionItems.forEach(collectionItem => {
     let dataSrc = collectionItem.querySelector('.data-src');
     let dataSectionText = collectionItem.querySelector('.data-section-name');
@@ -45,5 +50,50 @@ collectionItems.forEach(collectionItem => {
         authFromUsa: dataSrc.getAttribute('data-section-name').split('/')[4],
         typeOfRow: typeOfLink
     }
-    console.log(sectionModel);
+    downloadsList.push(sectionModel);
+});
+
+//создаем массив из имён секций
+downloadsList.forEach(downloadItem => {
+    if (sectionsList.includes(downloadItem.sectionId) == false) {
+        sectionsList.push(downloadItem.sectionId);
+        sectionsTask.push(downloadItem);
+    }
+});
+
+
+//рендерим секции 
+//надо сразу задавать аттрибуты секциям (проверка пароля, ордер, язык для оторажения и пр)
+sectionsTask.forEach(sectionObject => {
+    let clonableSection = document.querySelector('.section--placeholder').cloneNode(true);
+    let currentSectionSubtitleText = clonableSection.querySelector('.subtitle--cad');
+    clonableSection.classList.remove('section--placeholder');
+    clonableSection.setAttribute('id', sectionObject.sectionId);
+    clonableSection.style.order = sectionObject.sectionOrder;
+    let currentRowsWrapper = clonableSection.querySelector('.downloads-rows-wrapper');
+    let currentSectionNameText = clonableSection.querySelector('.h2--download-section');
+    currentSectionNameText.textContent = sectionObject.sectionName;
+
+    if (sectionObject.sectionId == 'CAD') {
+        currentSectionSubtitleText.textContent = sectionObject.sectionDescription;
+    } else {
+        currentSectionSubtitleText.remove();
+    }
+
+    if (sectionObject.langDisplayOnly == 'de') {
+        clonableSection.setAttribute('lang-display-only', sectionObject.langDisplayOnly);        
+    }
+
+    if (sectionObject.langDisplayOnly == 'en') {
+        clonableSection.setAttribute('lang-display-only', sectionObject.langDisplayOnly);    
+    }
+
+    if (sectionObject.authFromUsa == 'true') {
+        clonableSection.setAttribute('auth-from-usa', sectionObject.authFromUsa);
+    }
+
+
+
+    currentRowsWrapper.remove();
+    pageWrapper.append(clonableSection);
 });
