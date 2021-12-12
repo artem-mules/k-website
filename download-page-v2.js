@@ -71,7 +71,7 @@ sectionsTask.forEach(sectionObject => {
     clonableSection.classList.add('section--download-page');
     clonableSection.setAttribute('id', sectionObject.sectionId);
     clonableSection.style.order = sectionObject.sectionOrder;
-    let currentRowsWrapper = clonableSection.querySelector('.downloads-rows-wrapper');
+    let currentRows = clonableSection.querySelector('.downloads-rows-wrapper').querySelectorAll('*');
     let currentSectionNameText = clonableSection.querySelector('.h2--download-section');
     currentSectionNameText.textContent = sectionObject.sectionName;
 
@@ -95,7 +95,9 @@ sectionsTask.forEach(sectionObject => {
 
 
 
-    currentRowsWrapper.remove();
+    currentRows.forEach(row => {
+        row.remove();
+    });
     pageWrapper.append(clonableSection);
 });
 
@@ -106,15 +108,23 @@ allRenderedSection.forEach(renderedSection => {
     currentSectionId = renderedSection.getAttribute('id');
     downloadsList.forEach(file => {
         if (file.sectionId == currentSectionId) {
+            let currentRowsWrapper = renderedSection.querySelector('.downloads-rows-wrapper');
+
             if (file.typeOfRow == 'download--single') {
-                
+                let currentClonableRow = document.querySelector('.downloads-row-item--single').cloneNode(true);
+                currentRowsWrapper.append(currentClonableRow);
             }
             if (file.typeOfRow == 'download--multilang') {
-
+                let currentClonableRow = document.querySelector('.downloads-row-item--multilang').cloneNode(true);
+                currentRowsWrapper.append(currentClonableRow);
             }
-            if (file.typeOfRow == 'download--cad') {
+            // if (file.typeOfRow == 'download--cad') {
+            //     let currentClonableRow = document.querySelector('.downloads-row-item--cad').cloneNode(true);
+            //     currentRowsWrapper.append(currentClonableRow);
+            //     console.log('---3');
+            // }
 
-            }
+
         }
     });
 });
