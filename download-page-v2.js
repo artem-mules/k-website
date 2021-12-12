@@ -31,12 +31,18 @@ collectionItems.forEach(collectionItem => {
         typeOfLink = 'download--cad'
     }
     let sectionModel = {
+        // linkDe: collectionItem.querySelector('.de').getAttribute('href'),
+        // linkEn: collectionItem.querySelector('.en').getAttribute('href'),
+        // linkCh: collectionItem.querySelector('.ch').getAttribute('href'),
+        // linkFr: collectionItem.querySelector('.fr').getAttribute('href'),
+        // linkIt: collectionItem.querySelector('.it').getAttribute('href'),
+        // linkCad: collectionItem.querySelector('.cad').getAttribute('href'),
         linkDe: collectionItem.querySelector('.de'),
         linkEn: collectionItem.querySelector('.en'),
         linkCh: collectionItem.querySelector('.ch'),
         linkFr: collectionItem.querySelector('.fr'),
         linkIt: collectionItem.querySelector('.it'),
-        linkCad: collectionItem.querySelector('.cad'),
+        linkCad: collectionItem.querySelector('.cad').getAttribute('href'),
         sectionOrder: dataSrc.getAttribute('data-section-name').split('/')[0],
         sectionOrderCad: dataSrc.getAttribute('data-cad-category').split('/')[0],
         sectionId: dataSrc.getAttribute('data-section-name').split('/')[1],
@@ -112,11 +118,57 @@ allRenderedSection.forEach(renderedSection => {
 
             if (file.typeOfRow == 'download--single') {
                 let currentClonableRow = document.querySelector('.downloads-row-item--single').cloneNode(true);
+                let currentFilenameEl = currentClonableRow.querySelector('.h6--downloads-row-item');
+                let currentFileLink = currentClonableRow.querySelector('.downloads-row-item__link');
+                
+                let allObjectLinks = new (Array);
+                allObjectLinks.push(file.linkDe.getAttribute('href'));
+                allObjectLinks.push(file.linkEn.getAttribute('href'));
+                allObjectLinks.push(file.linkFr.getAttribute('href'));
+                allObjectLinks.push(file.linkIt.getAttribute('href'));
+                allObjectLinks.push(file.linkCh.getAttribute('href'));
+
+                allObjectLinks.forEach(link => {
+                    if (link != '#') {
+                        currentFileLink.setAttribute('href', link);
+                    }
+                });
+
+
+
+                currentFilenameEl.textContent = file.fileName;
                 currentRowsWrapper.append(currentClonableRow);
+
+
             }
             if (file.typeOfRow == 'download--multilang') {
                 let currentClonableRow = document.querySelector('.downloads-row-item--multilang').cloneNode(true);
+                let currentFilenameEl = currentClonableRow.querySelector('.h6--downloads-row-item');
+                let currentLinksWrapper = currentClonableRow.querySelector('.downloads-row-item__list');
+
+                let allElLinks = new (Array);
+                allElLinks.push(file.linkDe);
+                allElLinks.push(file.linkEn);
+                allElLinks.push(file.linkFr);
+                allElLinks.push(file.linkIt);
+                allElLinks.push(file.linkCh);
+
+                allElLinks.forEach(link => {
+                    if (link.getAttribute('href') != '#') {
+                        let currentClonableLink = currentClonableRow.querySelector('.downloads-row-item__link--lang').cloneNode(true);
+                        let currentLinkText = currentClonableLink.querySelector('.downloads-row-item__link-text');
+                        currentLinkText.textContent = link.textContent;
+                        currentClonableLink.setAttribute('href', link);
+                        currentLinksWrapper.append(currentClonableLink);
+                    }
+                });
+
+                
+                currentFilenameEl.textContent = file.fileName;
                 currentRowsWrapper.append(currentClonableRow);
+
+                let firstPlaceholderLink = currentClonableRow.querySelector('.downloads-row-item__link--lang');
+                firstPlaceholderLink.remove();
             }
             // if (file.typeOfRow == 'download--cad') {
             //     let currentClonableRow = document.querySelector('.downloads-row-item--cad').cloneNode(true);
