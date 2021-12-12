@@ -45,7 +45,7 @@ collectionItems.forEach(collectionItem => {
         linkCad: collectionItem.querySelector('.cad').getAttribute('href'),
         sectionOrder: dataSrc.getAttribute('data-section-name').split('/')[0],
         sectionOrderCad: dataSrc.getAttribute('data-cad-category').split('/')[0],
-        sectionId: dataSrc.getAttribute('data-section-name').split('/')[1],
+        sectionId: dataSrc.getAttribute('data-section-name').split('/')[1].toLowerCase(),
         sectionName: dataSectionText.textContent.split('/')[1],
         sectionNameCad: dataSectionTextCad.textContent.split('/')[1],
         fileName: dataFileNameText.textContent.split('@')[1],
