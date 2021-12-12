@@ -68,6 +68,7 @@ sectionsTask.forEach(sectionObject => {
     let clonableSection = document.querySelector('.section--placeholder').cloneNode(true);
     let currentSectionSubtitleText = clonableSection.querySelector('.subtitle--cad');
     clonableSection.classList.remove('section--placeholder');
+    clonableSection.classList.add('section--download-page');
     clonableSection.setAttribute('id', sectionObject.sectionId);
     clonableSection.style.order = sectionObject.sectionOrder;
     let currentRowsWrapper = clonableSection.querySelector('.downloads-rows-wrapper');
@@ -97,3 +98,24 @@ sectionsTask.forEach(sectionObject => {
     currentRowsWrapper.remove();
     pageWrapper.append(clonableSection);
 });
+
+//теперь собираем все секции
+let allRenderedSection = document.querySelectorAll('.section--download-page');
+
+allRenderedSection.forEach(renderedSection => {
+    currentSectionId = renderedSection.getAttribute('id');
+    downloadsList.forEach(file => {
+        if (file.sectionId == currentSectionId) {
+            if (file.typeOfRow == 'download--single') {
+                
+            }
+            if (file.typeOfRow == 'download--multilang') {
+
+            }
+            if (file.typeOfRow == 'download--cad') {
+
+            }
+        }
+    });
+});
+
