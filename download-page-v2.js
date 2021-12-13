@@ -119,11 +119,13 @@ sectionsTask.forEach(sectionObject => {
 });
 
 
-//<–––––––––––––––––––––––––––––––––––––––––––попробуем подкатегории тут создать для када
+//попробуем подкатегории тут создать для када
 let cadRowsWrapper = document.querySelector('#cad .downloads-rows-wrapper');
 
 sectionsTaskCad.forEach(cadTaskObject => {
     let currentClonableRow = document.querySelector('.downloads-row-item--cad').cloneNode(true);
+    let gonnaDelete = currentClonableRow.querySelector('.cad-row-grid--download-row--clone');
+    gonnaDelete.remove();
     let currentCategoryPlaceholder = currentClonableRow.querySelector('.h6--downloads-row-item');
     currentCategoryPlaceholder.textContent = cadTaskObject.sectionNameCad;
     currentClonableRow.style.order = cadTaskObject.sectionOrderCad;
@@ -205,7 +207,17 @@ allRenderedSection.forEach(renderedSection => {
                 let currentAppendWrapper = document.querySelector(currentAppendWrapperSelector);
 
                 if (file.sectionIdCad == currentAppendIdCap) {
-                    console.log(file);
+                    let clonebleCadRow = document.querySelector('.cad-row-grid--download-row--clone').cloneNode(true);
+                    let cadRowName = clonebleCadRow.querySelector('.h6--sap--name');
+                    let cadRowDescription = clonebleCadRow.querySelector('.h6--sap--description');
+                    let cadRowLink = clonebleCadRow.querySelector('.downloads-row-item__link');
+
+
+                    cadRowName.textContent = file.sapNumberCad;
+                    cadRowDescription.textContent = file.sapDescription;
+                    cadRowLink.setAttribute('href', file.linkCad);
+
+                    currentAppendWrapper.append(clonebleCadRow);
                 }
             }
 
