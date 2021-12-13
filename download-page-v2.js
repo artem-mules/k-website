@@ -204,7 +204,8 @@ allRenderedSection.forEach(renderedSection => {
                 let currentAppendId = currentAppendIdCap.toLowerCase();
 
                 let currentAppendWrapperSelector = ('#' + currentAppendId);
-                let currentAppendWrapper = document.querySelector(currentAppendWrapperSelector);
+                let currentAppendWrapper = document.querySelector(currentAppendWrapperSelector).querySelector('.downloads-row-item__list--cad');
+
 
                 if (file.sectionIdCad == currentAppendIdCap) {
                     let clonebleCadRow = document.querySelector('.cad-row-grid--download-row--clone').cloneNode(true);
