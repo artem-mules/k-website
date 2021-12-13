@@ -198,9 +198,15 @@ allRenderedSection.forEach(renderedSection => {
                 firstPlaceholderLink.remove();
             }
             if (file.typeOfRow == 'download--cad') {
-                // sectionsTaskCad.forEach(cadTaskObject => {
-                    
-                // });
+                let currentAppendIdCap = (file.sectionIdCad);
+                let currentAppendId = currentAppendIdCap.toLowerCase();
+
+                let currentAppendWrapperSelector = ('#' + currentAppendId);
+                let currentAppendWrapper = document.querySelector(currentAppendWrapperSelector);
+
+                if (file.sectionIdCad == currentAppendIdCap) {
+                    console.log(file);
+                }
             }
 
 
