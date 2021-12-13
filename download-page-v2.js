@@ -2,6 +2,8 @@ let collectionItems = document.querySelectorAll('.cl-i__download-data');
 let pageWrapper = document.querySelector('.page-wrapper');
 let sectionsList = new (Array);
 let sectionsTask = new (Array);
+let sectionsListCad = new (Array);
+let sectionsTaskCad = new (Array);
 let downloadsList = new (Array);
 
 
@@ -64,6 +66,14 @@ downloadsList.forEach(downloadItem => {
     if (sectionsList.includes(downloadItem.sectionId) == false) {
         sectionsList.push(downloadItem.sectionId);
         sectionsTask.push(downloadItem);
+    }
+});
+
+//создаём массив из имён кад секций
+downloadsList.forEach(downloadItem => {
+    if (sectionsListCad.includes(downloadItem.sectionNameCad) == false && downloadItem.sectionId == 'cad') {
+        sectionsListCad.push(downloadItem.sectionNameCad);
+        sectionsTaskCad.push(downloadItem);
     }
 });
 
@@ -170,11 +180,10 @@ allRenderedSection.forEach(renderedSection => {
                 let firstPlaceholderLink = currentClonableRow.querySelector('.downloads-row-item__link--lang');
                 firstPlaceholderLink.remove();
             }
-            // if (file.typeOfRow == 'download--cad') {
-            //     let currentClonableRow = document.querySelector('.downloads-row-item--cad').cloneNode(true);
-            //     currentRowsWrapper.append(currentClonableRow);
-            //     console.log('---3');
-            // }
+            if (file.typeOfRow == 'download--cad') {
+                //относительно файлов када — создаем массив категорий када
+                //относительно категорий када создаем две строчки када
+            }
 
 
         }
