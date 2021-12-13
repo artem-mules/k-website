@@ -49,6 +49,7 @@ collectionItems.forEach(collectionItem => {
         sectionOrderCad: dataSrc.getAttribute('data-cad-category').split('/')[0],
         sectionId: dataSrc.getAttribute('data-section-name').split('/')[1].toLowerCase(),
         sectionName: dataSectionText.textContent.split('/')[1],
+        sectionIdCad: dataSrc.getAttribute('data-cad-category').split('/')[1],
         sectionNameCad: dataSectionTextCad.textContent.split('/')[1],
         fileName: dataFileNameText.textContent.split('@')[1],
         sapNumberCad: dataFileSapText.textContent,
@@ -117,6 +118,22 @@ sectionsTask.forEach(sectionObject => {
     pageWrapper.append(clonableSection);
 });
 
+
+//<–––––––––––––––––––––––––––––––––––––––––––попробуем подкатегории тут создать для када
+let cadRowsWrapper = document.querySelector('#cad .downloads-rows-wrapper');
+
+sectionsTaskCad.forEach(cadTaskObject => {
+    let currentClonableRow = document.querySelector('.downloads-row-item--cad').cloneNode(true);
+    let currentCategoryPlaceholder = currentClonableRow.querySelector('.h6--downloads-row-item');
+    currentCategoryPlaceholder.textContent = cadTaskObject.sectionNameCad;
+    currentClonableRow.style.order = cadTaskObject.sectionOrderCad;
+    let currentCadSectionId = cadTaskObject.sectionIdCad;
+    currentCadSectionId = currentCadSectionId.toLowerCase();
+    currentClonableRow.setAttribute('id', currentCadSectionId);
+    cadRowsWrapper.append(currentClonableRow);
+});
+
+
 //теперь собираем все секции
 let allRenderedSection = document.querySelectorAll('.section--download-page');
 
@@ -181,8 +198,9 @@ allRenderedSection.forEach(renderedSection => {
                 firstPlaceholderLink.remove();
             }
             if (file.typeOfRow == 'download--cad') {
-                //относительно файлов када — создаем массив категорий када
-                //относительно категорий када создаем две строчки када
+                // sectionsTaskCad.forEach(cadTaskObject => {
+                    
+                // });
             }
 
 
