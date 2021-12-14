@@ -6,7 +6,7 @@ allHrefOnThePage.forEach(link => {
         //___________________
         if (link.getAttribute('transition') != 'false') {
             event.preventDefault();
-            if (link.classList.contains('cl-i__download-links__3-link-wrapper') && countryCode == 'US') {
+            if (link.classList.contains('downloads-row-item__link') && countryCode == 'US') {
                 // console.log(link.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.getAttribute('id'));
                 if (link.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.getAttribute('id') == 'auftragsfertigung' || link.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.getAttribute('id') == 'maschinen') {
                     if (localStorage.getItem('user') == null) {
