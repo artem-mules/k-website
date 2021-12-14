@@ -1,3 +1,4 @@
+let downloadNavAppendWrapper = document.querySelector('.branchen-menu__list--download');
 let collectionItems = document.querySelectorAll('.cl-i__download-data');
 let pageWrapper = document.querySelector('.page-wrapper');
 let sectionsList = new (Array);
@@ -82,6 +83,26 @@ downloadsList.forEach(downloadItem => {
 //рендерим секции 
 //надо сразу задавать аттрибуты секциям (проверка пароля, ордер, язык для оторажения и пр)
 sectionsTask.forEach(sectionObject => {
+    //создадим навигацю для страницы
+    let clonableNavEl = document.querySelector('.h5__branchen-menu').cloneNode(true);
+    clonableNavEl.textContent = sectionObject.sectionName;
+    let navElHref = ('#' + sectionObject.sectionId)
+    clonableNavEl.setAttribute('href', navElHref);
+    clonableNavEl.style.order = sectionObject.sectionOrder;
+
+    if (sectionObject.langDisplayOnly == 'de') {
+        clonableNavEl.setAttribute('lang-display-only', sectionObject.langDisplayOnly);
+    }
+
+    if (sectionObject.langDisplayOnly == 'en') {
+        clonableNavEl.setAttribute('lang-display-only', sectionObject.langDisplayOnly);
+    }
+
+    console.log(sectionObject.sectionId);
+    downloadNavAppendWrapper.append(clonableNavEl);
+
+
+    //создадим секции для страницы
     let clonableSection = document.querySelector('.section--placeholder').cloneNode(true);
     let currentSectionSubtitleText = clonableSection.querySelector('.subtitle--cad');
     clonableSection.classList.remove('section--placeholder');
@@ -118,9 +139,15 @@ sectionsTask.forEach(sectionObject => {
     pageWrapper.append(clonableSection);
 });
 
+//удаляем лишний пункт меню
+let clonableNavElPlaceholder = document.querySelectorAll('.h5__branchen-menu')[0];
+clonableNavElPlaceholder.remove();
+
 
 //попробуем подкатегории тут создать для када
 let cadRowsWrapper = document.querySelector('#cad .downloads-rows-wrapper');
+
+
 
 sectionsTaskCad.forEach(cadTaskObject => {
     let currentClonableRow = document.querySelector('.downloads-row-item--cad').cloneNode(true);
@@ -228,6 +255,10 @@ allRenderedSection.forEach(renderedSection => {
 });
 
 
+
+
+
+
 //–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
 //тут мутим авторизацию для США пользователей
 let url = 'https://api.geoapify.com/v1/ipinfo?apiKey=35edb2debb9a4ee785f52b02f7127781';
@@ -279,7 +310,3 @@ fetch(url)
     })
     .catch(err => { throw err });
 
-
-
-
-    console.log('fresh');
