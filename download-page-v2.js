@@ -46,6 +46,7 @@ collectionItems.forEach(collectionItem => {
         linkFr: collectionItem.querySelector('.fr'),
         linkIt: collectionItem.querySelector('.it'),
         linkCad: collectionItem.querySelector('.cad').getAttribute('href'),
+        fileOrder: dataSrc.getAttribute('data-file-order'),
         sectionOrder: dataSrc.getAttribute('data-section-name').split('/')[0],
         sectionOrderCad: dataSrc.getAttribute('data-cad-category').split('/')[0],
         sectionId: dataSrc.getAttribute('data-section-name').split('/')[1].toLowerCase(),
@@ -175,6 +176,7 @@ allRenderedSection.forEach(renderedSection => {
                 let currentClonableRow = document.querySelector('.downloads-row-item--single').cloneNode(true);
                 let currentFilenameEl = currentClonableRow.querySelector('.h6--downloads-row-item');
                 let currentFileLink = currentClonableRow.querySelector('.downloads-row-item__link');
+                currentClonableRow.style.order = file.fileOrder;
                 
                 let allObjectLinks = new (Array);
                 allObjectLinks.push(file.linkDe.getAttribute('href'));
@@ -200,6 +202,7 @@ allRenderedSection.forEach(renderedSection => {
                 let currentClonableRow = document.querySelector('.downloads-row-item--multilang').cloneNode(true);
                 let currentFilenameEl = currentClonableRow.querySelector('.h6--downloads-row-item');
                 let currentLinksWrapper = currentClonableRow.querySelector('.downloads-row-item__list');
+                currentClonableRow.style.order = file.fileOrder;
 
                 let allElLinks = new (Array);
                 allElLinks.push(file.linkDe);
@@ -238,6 +241,7 @@ allRenderedSection.forEach(renderedSection => {
                     let cadRowName = clonebleCadRow.querySelector('.h6--sap--name');
                     let cadRowDescription = clonebleCadRow.querySelector('.h6--sap--description');
                     let cadRowLink = clonebleCadRow.querySelector('.downloads-row-item__link');
+                    clonebleCadRow.style.order = file.fileOrder;
 
 
                     cadRowName.textContent = file.sapNumberCad;
