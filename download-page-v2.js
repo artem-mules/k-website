@@ -194,6 +194,7 @@ allRenderedSection.forEach(renderedSection => {
 
 
 
+                
                 currentFilenameEl.textContent = file.fileName;
                 currentRowsWrapper.append(currentClonableRow);
 
