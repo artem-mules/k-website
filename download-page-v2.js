@@ -98,7 +98,6 @@ sectionsTask.forEach(sectionObject => {
         clonableNavEl.setAttribute('lang-display-only', sectionObject.langDisplayOnly);
     }
 
-    console.log(sectionObject.sectionId);
     downloadNavAppendWrapper.append(clonableNavEl);
 
 
