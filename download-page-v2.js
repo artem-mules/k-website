@@ -176,6 +176,7 @@ allRenderedSection.forEach(renderedSection => {
                 let currentClonableRow = document.querySelector('.downloads-row-item--single').cloneNode(true);
                 let currentFilenameEl = currentClonableRow.querySelector('.h6--downloads-row-item');
                 let currentFileLink = currentClonableRow.querySelector('.downloads-row-item__link');
+                let currentFileLang = currentFileLink.querySelector('.downloads-row-item__link-text');
                 currentClonableRow.style.order = file.fileOrder;
                 
                 let allObjectLinks = new (Array);
