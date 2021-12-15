@@ -113,7 +113,7 @@ sectionsTask.forEach(sectionObject => {
     let currentSectionNameText = clonableSection.querySelector('.h2--download-section');
     currentSectionNameText.textContent = sectionObject.sectionName;
 
-    if (sectionObject.sectionId == 'CAD') {
+    if (sectionObject.sectionId == 'cad') {
         currentSectionSubtitleText.textContent = sectionObject.sectionDescription;
     } else {
         currentSectionSubtitleText.remove();

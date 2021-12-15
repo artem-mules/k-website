@@ -264,13 +264,14 @@ function testFun() {
         setTimeout(listenToSwitcher, 1150);
     }
     pagStatus = pagStatus + 1;
+    // console.log('пагинатор сформировался');
 }
 
 let pagTimer;
 //at the beginning of the function pagOs -> clear the timer, if there was one, and start it again
 function pagObs() {
     clearTimeout(pagTimer);
-    pagTimer = setTimeout(testFun, 200);
+    pagTimer = setTimeout(testFun, 600);
 }
 //start tracking the container with the paginator, it is important for us to understand when it changes
 const targetNode = document.querySelector(".pagination-container");
