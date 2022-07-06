@@ -1,4 +1,4 @@
-console.log('hi hi hi');
+console.log('test! 23');
 
 let countryInfo;
 function contactPageStart() {
@@ -9,6 +9,7 @@ function contactPageStart() {
     let popup2 = document.querySelector('.pc__support-2');
     let popup3 = document.querySelector('.pc__support-3');
     let popup4 = document.querySelector('.pc__support-4');
+    let popup5 = document.querySelector('.pc__support-5');
 
     let popupTrigger1__open = document.querySelector('.open1');
     let popupTrigger1__close = document.querySelector('.close1');
@@ -22,9 +23,13 @@ function contactPageStart() {
     let popupTrigger4__open = document.querySelector('.open4');
     let popupTrigger4__close = document.querySelector('.close4');
 
+    let popupTrigger5__open = document.querySelector('.open5');
+    let popupTrigger5__close = document.querySelector('.close5');
+
     let buttonVetrieb = document.querySelector('#button-vetrieb');
     let buttonHandelsvertreter = document.querySelector('#button-handelsvertreter');
     let buttonKontaktieren = document.querySelector('#button-kontaktieren');
+    let buttonKontaktierenNew = document.querySelector('#button-kontaktieren-new');
 
     let buttonsContries = document.querySelectorAll('.buttons--countries');
 
@@ -46,6 +51,11 @@ function contactPageStart() {
     buttonKontaktieren.addEventListener('click', function () {
         popupTrigger1__open.click();
         popupTrigger1__open.nextSibling.classList.add('current-close');
+    });
+
+    buttonKontaktierenNew.addEventListener('click', function () {
+        popupTrigger5__open.click();
+        popupTrigger5__open.nextSibling.classList.add('current-close');
     });
 
     buttonsContries.forEach(btn => {
@@ -82,8 +92,8 @@ function contactPageStart() {
     });
 
 
-//____________________________________________________________________________________
-//Alphabet_________________________________________________________________
+    //____________________________________________________________________________________
+    //Alphabet_________________________________________________________________
     let countriesItems = document.querySelectorAll('.hand-string--name');
     let countriesItemsMobile = document.querySelectorAll('.cl-i__countries');
     let itemsForSort = new (Array);
@@ -112,8 +122,8 @@ function contactPageStart() {
     });
 
 
-//____________________________________________________________________________________
-//PhoneCountry_________________________________________________________________
+    //____________________________________________________________________________________
+    //PhoneCountry_________________________________________________________________
     var input = document.querySelectorAll(".work-phone");
     input.forEach(element => {
         window.intlTelInput(element, {
@@ -132,9 +142,9 @@ function contactPageStart() {
     });
 
 
-//____________________________________________________________________________________
-//SelectWidth_________________________________________________________________
-   
+    //____________________________________________________________________________________
+    //SelectWidth_________________________________________________________________
+
     let inputTrigger = document.querySelectorAll('.iti__selected-flag');
     inputTrigger.forEach(element => {
         element.addEventListener('click', function () {
