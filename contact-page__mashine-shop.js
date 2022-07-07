@@ -10,7 +10,6 @@ function closeAllContacts() {
         trigger.click();
     });
 }
-//
 
 mashineCountryList.addEventListener('change', function() {
     if (mashineCountryList.value == '') {
@@ -22,9 +21,14 @@ mashineCountryList.addEventListener('change', function() {
             closeAllContacts();
             trigger__openPostal.click();
             document.addEventListener('keyup', function() {
-                console.log(postalInput.value);
+                closeAllContacts();
                 allMachineContactsEmbed.forEach(embed => {
-                    
+                    let currentIndexList = embed.getAttribute('data-postal-list').split(',');
+                    if (currentIndexList != '') {
+                        if (currentIndexList.includes(postalInput.value[0])) {
+                            embed.parentElement.parentElement.querySelector('.cl-i__contact-card__triggers_o-new').click();
+                        }
+                    }
                 });
             });
         } else {
