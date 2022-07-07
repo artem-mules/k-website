@@ -26,7 +26,7 @@ function stateChecking() {
     }
 }
 
-inputCountryList.addEventListener('change', function() {
+inputCountryList.addEventListener('change', function () {
     if (inputCountryList.value != 'Deutschland') {
         allCards.forEach(card => {
             let currentCardData = card.querySelector('.data-el__contact-card-data');
