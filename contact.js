@@ -1,5 +1,3 @@
-console.log('test! 23');
-
 let countryInfo;
 function contactPageStart() {
     let countyHiddenInput = document.querySelector('.input--selected-country');
