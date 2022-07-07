@@ -51,3 +51,16 @@ inputCountryList.addEventListener('change', function () {
 inputStatesList.addEventListener('change', function () {
     stateChecking();
 });
+
+inputCountryList.addEventListener('change', function() {
+    if (inputCountryList.value == '') {
+        allTriggersClose.forEach(trigger => {
+            trigger.click();
+        });
+        setTimeout(() => {
+            allTriggersClose.forEach(trigger => {
+                trigger.click();
+            });
+        }, 50);
+    }
+});
