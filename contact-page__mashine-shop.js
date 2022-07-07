@@ -20,7 +20,7 @@ mashineCountryList.addEventListener('change', function() {
             //this is Deutschland
             closeAllContacts();
             trigger__openPostal.click();
-            document.addEventListener('keyup', function() {
+            function checkPostal() {
                 closeAllContacts();
                 allMachineContactsEmbed.forEach(embed => {
                     let currentIndexList = embed.getAttribute('data-postal-list').split(',');
@@ -30,6 +30,15 @@ mashineCountryList.addEventListener('change', function() {
                         }
                     }
                 });
+            }
+            document.addEventListener('keyup', function() {
+                checkPostal();
+            });
+            postalInput.addEventListener('change', function() {
+                checkPostal();
+            });
+            postalInput.addEventListener('focusout', function () {
+                checkPostal();
             });
         } else {
             //not Deutschland
