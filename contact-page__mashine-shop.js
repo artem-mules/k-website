@@ -1,8 +1,8 @@
-let mashineCountryList = document.querySelector('#country-list-kontaktieren');
+let mashineCountryList = document.querySelector('#Auftragsfertigung-Country-List');
+let postalInput = document.querySelector('#Auftragsfertigung-Postleitzahl');
 let trigger__openPostal = document.querySelector('.form-block-mashinen-shop .o__input-countries-wrapper__1');
 let trigger__closePostal = document.querySelector('.form-block-mashinen-shop .c__input-countries-wrapper__1');
 let allMachineContactsEmbed = document.querySelectorAll('.cl-i__contact-card-2 .data-el__contact-card-data');
-let exceptionCountriesList = new Array();
 let allCloseTriggers2 = document.querySelectorAll('.cl-i__contact-card-2 .cl-i__contact-card__triggers_c-new');
 
 function closeAllContacts() {
@@ -10,27 +10,9 @@ function closeAllContacts() {
         trigger.click();
     });
 }
-
-allMachineContactsEmbed.forEach(contactEmbedMashines => {
-    if (contactEmbedMashines.getAttribute('data-country-list-not-germany-exception') != '') {
-        let this__listOfException = contactEmbedMashines.getAttribute('data-country-list-not-germany-exception').split(',');
-        this__listOfException.forEach(exceptionCountry => {
-            if (exceptionCountriesList.includes(exceptionCountry) == false) {
-                exceptionCountriesList.push(exceptionCountry)
-            }
-        });
-    }
-});
-
-function showAllExceptionContacts() {
-    allMachineContactsEmbed.forEach(embed => {
-        let this__listOfException = embed.getAttribute('data-country-list-not-germany-exception').split(',');
-    });
-}
-
+//
 
 mashineCountryList.addEventListener('change', function() {
-    console.log(mashineCountryList.value);
     if (mashineCountryList.value == '') {
         closeAllContacts();
         trigger__closePostal.click();
@@ -39,15 +21,33 @@ mashineCountryList.addEventListener('change', function() {
             //this is Deutschland
             closeAllContacts();
             trigger__openPostal.click();
+            document.addEventListener('keyup', function() {
+                console.log(postalInput.value);
+                allMachineContactsEmbed.forEach(embed => {
+                    
+                });
+            });
         } else {
             //not Deutschland
             closeAllContacts();
             trigger__closePostal.click();
-            if (exceptionCountriesList.includes(mashineCountryList.value)) {
-                showAllExceptionContacts();
-            } else {
-                console.log('надо спрятать контакты для стран исключений');
-            }
+
+            let currentInputCountry = mashineCountryList.value;
+            
+            allMachineContactsEmbed.forEach(embed => {
+                let currentCountryList = embed.getAttribute('data-countries-list-machine-shop').split(',');
+                if (currentCountryList != '') {
+                    if (currentCountryList[0] != '[not]') {
+                        if (currentCountryList.includes(currentInputCountry)) {
+                            let currentOpenTrigger = embed.parentElement.parentElement.querySelector('.cl-i__contact-card__triggers_o-new').click();
+                        }
+                    } else {
+                        if (currentCountryList.includes(currentInputCountry) == false) {
+                            let currentOpenTrigger = embed.parentElement.parentElement.querySelector('.cl-i__contact-card__triggers_o-new').click();
+                        }
+                    }
+                }
+            });
         }
     }
 });
